@@ -1,4 +1,4 @@
-import { supabase, getCurrentUser, signOut } from './supabase-client.js';
+import { supabase, getCurrentUser, signOut } from 'https://bharat-millet-hub.pages.dev/supabase-client.js';
 
 let currentUser = null;
 
