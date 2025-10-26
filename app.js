@@ -220,7 +220,7 @@ function handleVoiceCommand(command) {
     } else if (command.includes('auction')) {
         location.href = 'auction.html';
     } else if (command.includes('forecast')) {
-        location.href = 'forecasting.html';
+        location.href = 'https://bharat-millet-hub.pages.dev/forecasting';
     } else if (command.includes('scheme')) {
         location.href = 'schemes.html';
     } else if (command.includes('dashboard')) {
