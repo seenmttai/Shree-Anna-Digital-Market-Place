@@ -51,7 +51,7 @@ export async function signInWithMagicLink(email, userData = {}) {
 
 // Database helpers
 export async function getProducts(filters = {}) {
-    let query = supabase.from('products').select('*, seller:users(name, user_type)');
+    let query = supabase.from('products').select('*, seller:profiles!seller_id(name, user_type)');
     
     if (filters.category) {
         query = query.eq('category', filters.category);
@@ -70,7 +70,7 @@ export async function getProducts(filters = {}) {
 export async function getProduct(id) {
     const { data, error } = await supabase
         .from('products')
-        .select('*, seller:users(name, user_type, phone), reviews(*)')
+        .select('*, seller:profiles!seller_id(name, user_type, phone), reviews(*)')
         .eq('id', id)
         .single();
     return { data, error };
@@ -82,7 +82,7 @@ export async function createProduct(productData) {
 }
 
 export async function getRFQs(filters = {}) {
-    let query = supabase.from('rfqs').select('*, buyer:users(name), quotes:rfq_quotes(*)');
+    let query = supabase.from('rfqs').select('*, buyer:profiles!buyer_id(name), quotes:rfq_quotes(*)');
     
     if (filters.status) {
         query = query.eq('status', filters.status);
@@ -103,7 +103,7 @@ export async function submitQuote(quoteData) {
 }
 
 export async function getAuctions(filters = {}) {
-    let query = supabase.from('auctions').select('*, buyer:users(name), bids:auction_bids(*, seller:users(name))');
+    let query = supabase.from('auctions').select('*, buyer:profiles!buyer_id(name), bids:auction_bids(*, seller:profiles!seller_id(name))');
     
     if (filters.status) {
         query = query.eq('status', filters.status);
@@ -193,7 +193,7 @@ export async function createReview(reviewData) {
 export async function getReviews(productId) {
     const { data, error } = await supabase
         .from('reviews')
-        .select('*, user:users(name)')
+        .select('*, user:profiles(name)')
         .eq('product_id', productId)
         .order('created_at', { ascending: false });
     return { data, error };
