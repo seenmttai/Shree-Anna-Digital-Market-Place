@@ -1,0 +1,765 @@
+type,crop,state,year,season,value
+FHP,"Sorghum (Jowar)",Andhra Pradesh,1999,Whole,604
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2000,Whole,681
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2001,Whole,487
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2002,Whole,537
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2003,Whole,558
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2004,Whole,580
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2005,Kharif,582
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2005,Rabi,689
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2005,Whole,642
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2006,Kharif,590
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2006,Rabi,700
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2006,Whole,648
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2007,Kharif,628
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2007,Rabi,801
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2007,Whole,732
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2008,Kharif,789
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2008,Rabi,1221
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2008,Whole,1031
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2009,Kharif,823
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2009,Rabi,1007
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2009,Whole,936
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2010,Kharif,1148
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2010,Rabi,1089
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2010,Whole,1114
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2011,Kharif,965
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2011,Rabi,1889
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2011,Whole,1546
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2012,Kharif,1791
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2012,Rabi,1439
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2012,Whole,1548
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2013,Kharif,1756
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2013,Rabi,1403
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2013,Whole,1509
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2014,Kharif,1564
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2014,Rabi,1407
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2014,Whole,1440
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2015,Kharif,1549
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2015,Rabi,1363
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2015,Whole,1393
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2016,Kharif,1623
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2016,Rabi,1575
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2016,Whole,1582
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2017,Kharif,2297
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2017,Rabi,1834
+FHP,"Sorghum (Jowar)",Andhra Pradesh,2017,Whole,2297
+FHP,"Sorghum (Jowar)",Bihar,2003,Whole,313
+FHP,"Sorghum (Jowar)",Bihar,2009,Whole,680
+FHP,"Sorghum (Jowar)",Bihar,2010,Whole,701
+FHP,"Sorghum (Jowar)",Bihar,2011,Whole,675
+FHP,"Sorghum (Jowar)",Bihar,2012,Whole,733
+FHP,"Sorghum (Jowar)",Bihar,2013,Whole,757
+FHP,"Sorghum (Jowar)",Bihar,2014,Whole,815
+FHP,"Sorghum (Jowar)",Bihar,2015,Whole,875
+FHP,"Sorghum (Jowar)",Bihar,2016,Whole,869
+FHP,"Sorghum (Jowar)",Bihar,2017,Whole,871
+FHP,"Sorghum (Jowar)",Chhattisgarh,2003,Whole,571
+FHP,"Sorghum (Jowar)",Chhattisgarh,2005,Whole,929
+FHP,"Sorghum (Jowar)",Chhattisgarh,2006,Whole,588
+FHP,"Sorghum (Jowar)",Chhattisgarh,2007,Whole,792
+FHP,"Sorghum (Jowar)",Chhattisgarh,2008,Whole,1113
+FHP,"Sorghum (Jowar)",Chhattisgarh,2010,Whole,1471
+FHP,"Sorghum (Jowar)",Chhattisgarh,2011,Kharif,1422
+FHP,"Sorghum (Jowar)",Chhattisgarh,2011,Rabi,2000
+FHP,"Sorghum (Jowar)",Chhattisgarh,2012,Whole,980
+FHP,"Sorghum (Jowar)",Chhattisgarh,2013,Kharif,1800
+FHP,"Sorghum (Jowar)",Chhattisgarh,2013,Rabi,3000
+FHP,"Sorghum (Jowar)",Chhattisgarh,2014,Kharif,4000
+FHP,"Sorghum (Jowar)",Chhattisgarh,2014,Rabi,3000
+FHP,"Sorghum (Jowar)",Chhattisgarh,2015,Kharif,1849
+FHP,"Sorghum (Jowar)",Chhattisgarh,2015,Rabi,2310
+FHP,"Sorghum (Jowar)",Chhattisgarh,2016,Kharif,2299
+FHP,"Sorghum (Jowar)",Chhattisgarh,2016,Rabi,1868
+FHP,"Sorghum (Jowar)",Chhattisgarh,2017,Kharif,2096
+FHP,"Sorghum (Jowar)",Chhattisgarh,2017,Rabi,2168
+FHP,"Sorghum (Jowar)",Delhi,2001,Kharif,675
+FHP,"Sorghum (Jowar)",Delhi,2001,Rabi,450
+FHP,"Sorghum (Jowar)",Delhi,2007,Kharif,4200
+FHP,"Sorghum (Jowar)",Delhi,2007,Rabi,4300
+FHP,"Sorghum (Jowar)",Gujarat,2004,Whole,667
+FHP,"Sorghum (Jowar)",Gujarat,2005,Whole,703
+FHP,"Sorghum (Jowar)",Gujarat,2006,Whole,700
+FHP,"Sorghum (Jowar)",Gujarat,2007,Whole,727
+FHP,"Sorghum (Jowar)",Gujarat,2008,Whole,921
+FHP,"Sorghum (Jowar)",Gujarat,2009,Whole,928
+FHP,"Sorghum (Jowar)",Gujarat,2010,Whole,973
+FHP,"Sorghum (Jowar)",Gujarat,2011,Whole,1092
+FHP,"Sorghum (Jowar)",Gujarat,2012,Whole,1659
+FHP,"Sorghum (Jowar)",Gujarat,2013,Whole,1585
+FHP,"Sorghum (Jowar)",Gujarat,2014,Whole,1774
+FHP,"Sorghum (Jowar)",Gujarat,2015,Whole,1889
+FHP,"Sorghum (Jowar)",Gujarat,2016,Whole,2031
+FHP,"Sorghum (Jowar)",Gujarat,2017,Whole,1870
+FHP,"Sorghum (Jowar)",Haryana,1999,Whole,333
+FHP,"Sorghum (Jowar)",Haryana,2000,Whole,577
+FHP,"Sorghum (Jowar)",Haryana,2001,Whole,600
+FHP,"Sorghum (Jowar)",Haryana,2002,Whole,602
+FHP,"Sorghum (Jowar)",Haryana,2003,Whole,659
+FHP,"Sorghum (Jowar)",Haryana,2004,Whole,567
+FHP,"Sorghum (Jowar)",Haryana,2005,Whole,652
+FHP,"Sorghum (Jowar)",Haryana,2006,Whole,735
+FHP,"Sorghum (Jowar)",Haryana,2007,Whole,696
+FHP,"Sorghum (Jowar)",Haryana,2008,Whole,762
+FHP,"Sorghum (Jowar)",Haryana,2009,Whole,925
+FHP,"Sorghum (Jowar)",Haryana,2010,Whole,1010
+FHP,"Sorghum (Jowar)",Haryana,2011,Whole,1157
+FHP,"Sorghum (Jowar)",Haryana,2012,Whole,1105
+FHP,"Sorghum (Jowar)",Haryana,2013,Whole,786
+FHP,"Sorghum (Jowar)",Haryana,2016,Whole,3107
+FHP,"Sorghum (Jowar)",Haryana,2017,Whole,3458
+FHP,"Sorghum (Jowar)",Jharkhand,2017,Whole,1172
+FHP,"Sorghum (Jowar)",Karnataka,2003,Whole,428
+FHP,"Sorghum (Jowar)",Karnataka,2004,Whole,534
+FHP,"Sorghum (Jowar)",Karnataka,2005,Kharif,112
+FHP,"Sorghum (Jowar)",Karnataka,2005,Rabi,182
+FHP,"Sorghum (Jowar)",Karnataka,2005,Whole,245
+FHP,"Sorghum (Jowar)",Karnataka,2006,Kharif,358
+FHP,"Sorghum (Jowar)",Karnataka,2006,Rabi,559
+FHP,"Sorghum (Jowar)",Karnataka,2007,Kharif,614
+FHP,"Sorghum (Jowar)",Karnataka,2007,Rabi,864
+FHP,"Sorghum (Jowar)",Karnataka,2008,Kharif,592
+FHP,"Sorghum (Jowar)",Karnataka,2008,Rabi,1227
+FHP,"Sorghum (Jowar)",Karnataka,2009,Kharif,660
+FHP,"Sorghum (Jowar)",Karnataka,2009,Rabi,838
+FHP,"Sorghum (Jowar)",Karnataka,2010,Kharif,1053
+FHP,"Sorghum (Jowar)",Karnataka,2010,Rabi,1005
+FHP,"Sorghum (Jowar)",Karnataka,2011,Kharif,1401
+FHP,"Sorghum (Jowar)",Karnataka,2011,Rabi,1650
+FHP,"Sorghum (Jowar)",Karnataka,2012,Kharif,2197
+FHP,"Sorghum (Jowar)",Karnataka,2012,Rabi,2451
+FHP,"Sorghum (Jowar)",Karnataka,2013,Kharif,1252
+FHP,"Sorghum (Jowar)",Karnataka,2013,Rabi,1677
+FHP,"Sorghum (Jowar)",Karnataka,2014,Kharif,1116
+FHP,"Sorghum (Jowar)",Karnataka,2014,Rabi,1300
+FHP,"Sorghum (Jowar)",Karnataka,2015,Kharif,2544
+FHP,"Sorghum (Jowar)",Karnataka,2015,Rabi,1693
+FHP,"Sorghum (Jowar)",Karnataka,2016,Whole,1918
+FHP,"Sorghum (Jowar)","Jammu & Kashmir",2000,Whole,650
+FHP,"Sorghum (Jowar)","Jammu & Kashmir",2005,Whole,2100
+FHP,"Sorghum (Jowar)","Madhya Pradesh",1999,Whole,617
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2000,Whole,605
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2001,Whole,721
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2002,Whole,461
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2003,Whole,504
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2004,Whole,507
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2005,Kharif,574
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2005,Rabi,499
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2005,Whole,574
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2006,Kharif,624
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2006,Rabi,553
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2007,Kharif,819
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2007,Rabi,730
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2008,Kharif,832
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2008,Rabi,740
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2009,Kharif,849
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2009,Rabi,952
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2010,Kharif,946
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2010,Rabi,1126
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2011,Kharif,1020
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2011,Rabi,1126
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2012,Kharif,1122
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2012,Rabi,1208
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2013,Kharif,1393
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2013,Rabi,1250
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2014,Kharif,1372
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2014,Rabi,1213
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2015,Kharif,1422
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2015,Rabi,1410
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2017,Kharif,1839
+FHP,"Sorghum (Jowar)","Madhya Pradesh",2017,Rabi,1623
+FHP,"Sorghum (Jowar)",Maharashtra,1999,Whole,474
+FHP,"Sorghum (Jowar)",Maharashtra,2000,Whole,528
+FHP,"Sorghum (Jowar)",Maharashtra,2001,Whole,542
+FHP,"Sorghum (Jowar)",Maharashtra,2002,Whole,548
+FHP,"Sorghum (Jowar)",Maharashtra,2003,Whole,543
+FHP,"Sorghum (Jowar)",Maharashtra,2004,Whole,562
+FHP,"Sorghum (Jowar)",Maharashtra,2005,Whole,587
+FHP,"Sorghum (Jowar)",Maharashtra,2006,Whole,543
+FHP,"Sorghum (Jowar)",Maharashtra,2007,Whole,611
+FHP,"Sorghum (Jowar)",Maharashtra,2008,Whole,627
+FHP,"Sorghum (Jowar)",Maharashtra,2009,Whole,890
+FHP,"Sorghum (Jowar)",Maharashtra,2010,Whole,957
+FHP,"Sorghum (Jowar)",Maharashtra,2011,Whole,1099
+FHP,"Sorghum (Jowar)",Maharashtra,2012,Whole,1779
+FHP,"Sorghum (Jowar)",Maharashtra,2013,Whole,1538
+FHP,"Sorghum (Jowar)",Maharashtra,2014,Whole,1507
+FHP,"Sorghum (Jowar)",Maharashtra,2015,Whole,1755
+FHP,"Sorghum (Jowar)",Maharashtra,2016,Whole,1763
+FHP,"Sorghum (Jowar)",Maharashtra,2017,Whole,1877
+FHP,"Sorghum (Jowar)",Puducherry,2010,Whole,899
+FHP,"Sorghum (Jowar)",Puducherry,2011,Whole,1074
+FHP,"Sorghum (Jowar)",Puducherry,2012,Whole,932
+FHP,"Sorghum (Jowar)",Puducherry,2013,Whole,1351
+FHP,"Sorghum (Jowar)",Rajasthan,1999,Whole,491
+FHP,"Sorghum (Jowar)",Rajasthan,2000,Whole,624
+FHP,"Sorghum (Jowar)",Rajasthan,2001,Whole,503
+FHP,"Sorghum (Jowar)",Rajasthan,2002,Whole,460
+FHP,"Sorghum (Jowar)",Rajasthan,2003,Whole,580
+FHP,"Sorghum (Jowar)",Rajasthan,2004,Whole,490
+FHP,"Sorghum (Jowar)",Rajasthan,2005,Whole,551
+FHP,"Sorghum (Jowar)",Rajasthan,2006,Whole,673
+FHP,"Sorghum (Jowar)",Rajasthan,2007,Whole,791
+FHP,"Sorghum (Jowar)",Rajasthan,2008,Whole,774
+FHP,"Sorghum (Jowar)",Rajasthan,2009,Whole,786
+FHP,"Sorghum (Jowar)",Rajasthan,2010,Whole,1106
+FHP,"Sorghum (Jowar)",Rajasthan,2011,Whole,1159
+FHP,"Sorghum (Jowar)",Rajasthan,2012,Whole,1074
+FHP,"Sorghum (Jowar)",Rajasthan,2013,Whole,1287
+FHP,"Sorghum (Jowar)",Rajasthan,2014,Whole,1290
+FHP,"Sorghum (Jowar)",Rajasthan,2015,Whole,1594
+FHP,"Sorghum (Jowar)",Rajasthan,2016,Whole,1807
+FHP,"Sorghum (Jowar)",Rajasthan,2017,Whole,1624
+FHP,"Sorghum (Jowar)","Tamil Nadu",1999,Whole,472
+FHP,"Sorghum (Jowar)","Tamil Nadu",2000,Whole,524
+FHP,"Sorghum (Jowar)","Tamil Nadu",2001,Whole,463
+FHP,"Sorghum (Jowar)","Tamil Nadu",2002,Whole,479
+FHP,"Sorghum (Jowar)","Tamil Nadu",2003,Whole,578
+FHP,"Sorghum (Jowar)","Tamil Nadu",2004,Whole,562
+FHP,"Sorghum (Jowar)","Tamil Nadu",2005,Whole,565
+FHP,"Sorghum (Jowar)","Tamil Nadu",2006,Whole,572
+FHP,"Sorghum (Jowar)","Tamil Nadu",2007,Whole,661
+FHP,"Sorghum (Jowar)","Tamil Nadu",2008,Whole,881
+FHP,"Sorghum (Jowar)","Tamil Nadu",2009,Whole,1022
+FHP,"Sorghum (Jowar)","Tamil Nadu",2010,Whole,1077
+FHP,"Sorghum (Jowar)","Tamil Nadu",2011,Whole,1410
+FHP,"Sorghum (Jowar)","Tamil Nadu",2012,Whole,1534
+FHP,"Sorghum (Jowar)","Tamil Nadu",2013,Whole,1838
+FHP,"Sorghum (Jowar)","Tamil Nadu",2014,Whole,2002
+FHP,"Sorghum (Jowar)","Tamil Nadu",2015,Whole,2069
+FHP,"Sorghum (Jowar)",Telangana,2015,Kharif,1969
+FHP,"Sorghum (Jowar)",Telangana,2015,Rabi,2157
+FHP,"Sorghum (Jowar)",Telangana,2015,Whole,2093
+FHP,"Sorghum (Jowar)",Telangana,2016,Kharif,2057
+FHP,"Sorghum (Jowar)",Telangana,2016,Rabi,2394
+FHP,"Sorghum (Jowar)",Telangana,2016,Whole,2092
+FHP,"Sorghum (Jowar)",Telangana,2017,Whole,1863
+FHP,"Sorghum (Jowar)","Uttar Pradesh",1999,Whole,417
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2000,Whole,472
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2001,Whole,444
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2002,Whole,399
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2003,Whole,434
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2004,Whole,421
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2005,Whole,455
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2006,Whole,554
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2007,Whole,655
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2008,Whole,554
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2009,Whole,667
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2010,Whole,849
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2011,Whole,836
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2012,Whole,984
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2013,Whole,1164
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2014,Whole,1199
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2015,Whole,1168
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2016,Whole,1426
+FHP,"Sorghum (Jowar)","Uttar Pradesh",2017,Whole,1484
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,1999,Whole,422
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2000,Whole,487
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2001,Whole,364
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2002,Whole,438
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2003,Whole,483
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2004,Whole,463
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2005,Kharif,523
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2005,Rabi,537
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2005,Whole,524
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2006,Kharif,501
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2006,Rabi,587
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2006,Whole,511
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2007,Kharif,533
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2007,Rabi,885
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2007,Whole,602
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2008,Kharif,647
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2008,Rabi,1438
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2008,Whole,742
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2009,Kharif,817
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2009,Rabi,1741
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2009,Whole,950
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2010,Kharif,901
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2010,Rabi,940
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2010,Whole,908
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2011,Kharif,912
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2011,Rabi,2249
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2011,Whole,1137
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2012,Kharif,1004
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2012,Rabi,1408
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2012,Whole,1078
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2013,Kharif,1245
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2013,Rabi,2000
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2013,Whole,1288
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2014,Kharif,1406
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2014,Rabi,1519
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2014,Whole,1418
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2015,Kharif,1311
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2015,Rabi,1179
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2015,Whole,1292
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2016,Kharif,1387
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2016,Rabi,1327
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2016,Whole,1384
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2017,Kharif,1536
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2017,Rabi,3116
+FHP,"Pearl Millet (Bajra)",Andhra Pradesh,2017,Whole,1537
+FHP,"Pearl Millet (Bajra)",Bihar,2000,Whole,567
+FHP,"Pearl Millet (Bajra)",Bihar,2003,Whole,359
+FHP,"Pearl Millet (Bajra)",Bihar,2009,Whole,775
+FHP,"Pearl Millet (Bajra)",Bihar,2010,Whole,837
+FHP,"Pearl Millet (Bajra)",Bihar,2011,Whole,804
+FHP,"Pearl Millet (Bajra)",Bihar,2012,Whole,834
+FHP,"Pearl Millet (Bajra)",Bihar,2017,Kharif,1175
+FHP,"Pearl Millet (Bajra)",Bihar,2017,Rabi,1177
+FHP,"Pearl Millet (Bajra)",Bihar,2017,Whole,1177
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2009,Whole,1156
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2011,Whole,1442
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2012,Whole,1599
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2013,Whole,1426
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2014,Whole,3233
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2015,Whole,1641
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2016,Whole,2197
+FHP,"Pearl Millet (Bajra)",Chhattisgarh,2017,Whole,2963
+FHP,"Pearl Millet (Bajra)",Delhi,1999,Whole,417
+FHP,"Pearl Millet (Bajra)",Delhi,2000,Whole,577
+FHP,"Pearl Millet (Bajra)",Delhi,2001,Whole,375
+FHP,"Pearl Millet (Bajra)",Delhi,2002,Whole,382
+FHP,"Pearl Millet (Bajra)",Delhi,2003,Whole,584
+FHP,"Pearl Millet (Bajra)",Delhi,2004,Whole,457
+FHP,"Pearl Millet (Bajra)",Delhi,2005,Whole,615
+FHP,"Pearl Millet (Bajra)",Delhi,2006,Whole,716
+FHP,"Pearl Millet (Bajra)",Delhi,2007,Whole,795
+FHP,"Pearl Millet (Bajra)",Delhi,2008,Whole,768
+FHP,"Pearl Millet (Bajra)",Delhi,2009,Whole,840
+FHP,"Pearl Millet (Bajra)",Delhi,2010,Whole,840
+FHP,"Pearl Millet (Bajra)",Delhi,2011,Whole,1200
+FHP,"Pearl Millet (Bajra)",Delhi,2012,Whole,1250
+FHP,"Pearl Millet (Bajra)",Delhi,2013,Whole,1450
+FHP,"Pearl Millet (Bajra)",Delhi,2014,Whole,1450
+FHP,"Pearl Millet (Bajra)",Delhi,2015,Whole,1500
+FHP,"Pearl Millet (Bajra)",Delhi,2016,Whole,1650
+FHP,"Pearl Millet (Bajra)",Delhi,2017,Whole,1650
+FHP,"Pearl Millet (Bajra)",Gujarat,1999,Whole,577
+FHP,"Pearl Millet (Bajra)",Gujarat,2000,Whole,603
+FHP,"Pearl Millet (Bajra)",Gujarat,2001,Whole,545
+FHP,"Pearl Millet (Bajra)",Gujarat,2002,Whole,500
+FHP,"Pearl Millet (Bajra)",Gujarat,2003,Whole,550
+FHP,"Pearl Millet (Bajra)",Gujarat,2004,Whole,553
+FHP,"Pearl Millet (Bajra)",Gujarat,2005,Whole,586
+FHP,"Pearl Millet (Bajra)",Gujarat,2006,Whole,644
+FHP,"Pearl Millet (Bajra)",Gujarat,2007,Whole,652
+FHP,"Pearl Millet (Bajra)",Gujarat,2008,Whole,705
+FHP,"Pearl Millet (Bajra)",Gujarat,2009,Whole,745
+FHP,"Pearl Millet (Bajra)",Gujarat,2010,Whole,931
+FHP,"Pearl Millet (Bajra)",Gujarat,2011,Whole,1018
+FHP,"Pearl Millet (Bajra)",Gujarat,2012,Whole,987
+FHP,"Pearl Millet (Bajra)",Gujarat,2013,Whole,1275
+FHP,"Pearl Millet (Bajra)",Gujarat,2014,Whole,1297
+FHP,"Pearl Millet (Bajra)",Gujarat,2015,Kharif,1271
+FHP,"Pearl Millet (Bajra)",Gujarat,2015,Rabi,1172
+FHP,"Pearl Millet (Bajra)",Gujarat,2016,Whole,1261
+FHP,"Pearl Millet (Bajra)",Gujarat,2017,Whole,1398
+FHP,"Pearl Millet (Bajra)",Haryana,1999,Whole,466
+FHP,"Pearl Millet (Bajra)",Haryana,2000,Whole,527
+FHP,"Pearl Millet (Bajra)",Haryana,2001,Whole,433
+FHP,"Pearl Millet (Bajra)",Haryana,2002,Whole,728
+FHP,"Pearl Millet (Bajra)",Haryana,2003,Whole,430
+FHP,"Pearl Millet (Bajra)",Haryana,2004,Whole,434
+FHP,"Pearl Millet (Bajra)",Haryana,2005,Whole,562
+FHP,"Pearl Millet (Bajra)",Haryana,2006,Whole,568
+FHP,"Pearl Millet (Bajra)",Haryana,2007,Whole,671
+FHP,"Pearl Millet (Bajra)",Haryana,2008,Whole,711
+FHP,"Pearl Millet (Bajra)",Haryana,2009,Whole,2331
+FHP,"Pearl Millet (Bajra)",Haryana,2010,Whole,743
+FHP,"Pearl Millet (Bajra)",Haryana,2011,Whole,691
+FHP,"Pearl Millet (Bajra)",Haryana,2012,Whole,1229
+FHP,"Pearl Millet (Bajra)",Haryana,2013,Whole,1211
+FHP,"Pearl Millet (Bajra)",Haryana,2014,Whole,1319
+FHP,"Pearl Millet (Bajra)",Haryana,2016,Kharif,131
+FHP,"Pearl Millet (Bajra)",Haryana,2016,Rabi,1329
+FHP,"Pearl Millet (Bajra)",Jharkhand,2012,Whole,1030
+FHP,"Pearl Millet (Bajra)",Jharkhand,2013,Whole,1031
+FHP,"Pearl Millet (Bajra)",Jharkhand,2017,Kharif,971
+FHP,"Pearl Millet (Bajra)",Jharkhand,2017,Rabi,1687
+FHP,"Pearl Millet (Bajra)",Karnataka,2002,Whole,428
+FHP,"Pearl Millet (Bajra)",Karnataka,2003,Whole,534
+FHP,"Pearl Millet (Bajra)",Karnataka,2004,Whole,258
+FHP,"Pearl Millet (Bajra)",Karnataka,2006,Whole,318
+FHP,"Pearl Millet (Bajra)",Karnataka,2007,Whole,627
+FHP,"Pearl Millet (Bajra)",Karnataka,2008,Whole,574
+FHP,"Pearl Millet (Bajra)",Karnataka,2009,Whole,739
+FHP,"Pearl Millet (Bajra)",Karnataka,2010,Whole,749
+FHP,"Pearl Millet (Bajra)",Karnataka,2011,Whole,802
+FHP,"Pearl Millet (Bajra)",Karnataka,2012,Whole,1010
+FHP,"Pearl Millet (Bajra)",Karnataka,2013,Kharif,1236
+FHP,"Pearl Millet (Bajra)",Karnataka,2013,Rabi,1297
+FHP,"Pearl Millet (Bajra)",Karnataka,2014,Whole,1217
+FHP,"Pearl Millet (Bajra)",Karnataka,2015,Whole,1163
+FHP,"Pearl Millet (Bajra)",Karnataka,2016,Kharif,1339
+FHP,"Pearl Millet (Bajra)",Karnataka,2016,Rabi,1678
+FHP,"Pearl Millet (Bajra)",Karnataka,2017,Kharif,1469
+FHP,"Pearl Millet (Bajra)",Karnataka,2017,Rabi,1400
+FHP,"Pearl Millet (Bajra)",Karnataka,2017,Whole,1548
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",1999,Whole,588
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2000,Whole,506
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2001,Whole,503
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2003,Whole,600
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2007,Whole,1217
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2008,Whole,1202
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2009,Whole,1193
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2010,Whole,1344
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2011,Whole,892
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2012,Whole,594
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2013,Kharif,1000
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2013,Rabi,1031
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2014,Whole,1103
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2015,Whole,1153
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2016,Whole,1157
+FHP,"Pearl Millet (Bajra)","Jammu & Kashmir",2017,Whole,1207
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",1999,Whole,390
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2000,Whole,537
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2001,Whole,396
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2002,Whole,405
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2003,Whole,524
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2004,Whole,364
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2005,Whole,484
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2006,Whole,538
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2007,Whole,641
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2008,Whole,573
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2009,Whole,643
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2010,Whole,851
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2011,Whole,893
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2012,Whole,807
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2013,Whole,1260
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2014,Whole,1103
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2015,Whole,1153
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2016,Whole,1157
+FHP,"Pearl Millet (Bajra)","Madhya Pradesh",2017,Whole,1207
+FHP,"Pearl Millet (Bajra)",Maharashtra,1999,Whole,445
+FHP,"Pearl Millet (Bajra)",Maharashtra,2000,Whole,510
+FHP,"Pearl Millet (Bajra)",Maharashtra,2001,Whole,507
+FHP,"Pearl Millet (Bajra)",Maharashtra,2002,Whole,565
+FHP,"Pearl Millet (Bajra)",Maharashtra,2003,Whole,535
+FHP,"Pearl Millet (Bajra)",Maharashtra,2004,Whole,557
+FHP,"Pearl Millet (Bajra)",Maharashtra,2005,Whole,535
+FHP,"Pearl Millet (Bajra)",Maharashtra,2006,Whole,547
+FHP,"Pearl Millet (Bajra)",Maharashtra,2007,Whole,581
+FHP,"Pearl Millet (Bajra)",Maharashtra,2008,Whole,616
+FHP,"Pearl Millet (Bajra)",Maharashtra,2009,Whole,796
+FHP,"Pearl Millet (Bajra)",Maharashtra,2010,Whole,862
+FHP,"Pearl Millet (Bajra)",Maharashtra,2011,Whole,958
+FHP,"Pearl Millet (Bajra)",Maharashtra,2012,Whole,1085
+FHP,"Pearl Millet (Bajra)",Maharashtra,2013,Whole,1239
+FHP,"Pearl Millet (Bajra)",Maharashtra,2014,Whole,1403
+FHP,"Pearl Millet (Bajra)",Maharashtra,2015,Whole,1417
+FHP,"Pearl Millet (Bajra)",Maharashtra,2016,Whole,1454
+FHP,"Pearl Millet (Bajra)",Maharashtra,2017,Whole,1405
+FHP,"Pearl Millet (Bajra)",Puducherry,2003,Whole,536
+FHP,"Pearl Millet (Bajra)",Puducherry,2004,Whole,454
+FHP,"Pearl Millet (Bajra)",Puducherry,2005,Whole,466
+FHP,"Pearl Millet (Bajra)",Puducherry,2008,Whole,690
+FHP,"Pearl Millet (Bajra)",Puducherry,2009,Whole,663
+FHP,"Pearl Millet (Bajra)",Puducherry,2010,Whole,816
+FHP,"Pearl Millet (Bajra)",Puducherry,2016,Whole,1538
+FHP,"Pearl Millet (Bajra)",Puducherry,2017,Whole,1593
+FHP,"Pearl Millet (Bajra)",Rajasthan,1999,Whole,414
+FHP,"Pearl Millet (Bajra)",Rajasthan,2000,Whole,584
+FHP,"Pearl Millet (Bajra)",Rajasthan,2001,Whole,426
+FHP,"Pearl Millet (Bajra)",Rajasthan,2002,Whole,358
+FHP,"Pearl Millet (Bajra)",Rajasthan,2003,Whole,557
+FHP,"Pearl Millet (Bajra)",Rajasthan,2004,Whole,427
+FHP,"Pearl Millet (Bajra)",Rajasthan,2005,Whole,520
+FHP,"Pearl Millet (Bajra)",Rajasthan,2006,Whole,609
+FHP,"Pearl Millet (Bajra)",Rajasthan,2007,Whole,690
+FHP,"Pearl Millet (Bajra)",Rajasthan,2008,Whole,663
+FHP,"Pearl Millet (Bajra)",Rajasthan,2009,Whole,710
+FHP,"Pearl Millet (Bajra)",Rajasthan,2010,Whole,902
+FHP,"Pearl Millet (Bajra)",Rajasthan,2011,Whole,880
+FHP,"Pearl Millet (Bajra)",Rajasthan,2012,Whole,855
+FHP,"Pearl Millet (Bajra)",Rajasthan,2013,Whole,1140
+FHP,"Pearl Millet (Bajra)",Rajasthan,2014,Whole,1192
+FHP,"Pearl Millet (Bajra)",Rajasthan,2015,Whole,1181
+FHP,"Pearl Millet (Bajra)",Rajasthan,2016,Whole,1267
+FHP,"Pearl Millet (Bajra)",Rajasthan,2017,Whole,1393
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",1999,Whole,431
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2000,Whole,475
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2001,Whole,403
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2002,Whole,445
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2003,Whole,541
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2004,Whole,488
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2005,Whole,504
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2006,Whole,535
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2007,Whole,660
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2008,Whole,753
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2009,Whole,892
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2010,Whole,1172
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2011,Whole,1186
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2012,Whole,1291
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2014,Whole,1952
+FHP,"Pearl Millet (Bajra)","Tamil Nadu",2015,Whole,1860
+FHP,"Pearl Millet (Bajra)",Telangana,2015,Kharif,1126
+FHP,"Pearl Millet (Bajra)",Telangana,2015,Rabi,1242
+FHP,"Pearl Millet (Bajra)",Telangana,2016,Kharif,1863
+FHP,"Pearl Millet (Bajra)",Telangana,2016,Rabi,143
+FHP,"Pearl Millet (Bajra)",Telangana,2016,Whole,1539
+FHP,"Pearl Millet (Bajra)",Telangana,2017,Whole,1429
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",1999,Whole,383
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2000,Whole,478
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2001,Whole,347
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2002,Whole,344
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2003,Whole,513
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2004,Whole,463
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2005,Whole,446
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2006,Whole,535
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2007,Whole,572
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2008,Whole,535
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2009,Whole,632
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2010,Whole,769
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2011,Whole,739
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2012,Whole,808
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2014,Whole,1106
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2015,Whole,1248
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2016,Whole,1417
+FHP,"Pearl Millet (Bajra)","Uttar Pradesh",2017,Whole,1231
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,1999,Whole,432
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2001,Whole,440
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2002,Whole,443
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2003,Whole,491
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2004,Whole,507
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2005,Kharif,496
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2005,Rabi,545
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2005,Whole,504
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2006,Kharif,525
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2006,Rabi,520
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2006,Whole,524
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2007,Kharif,543
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2007,Rabi,603
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2007,Whole,555
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2008,Kharif,741
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2008,Rabi,695
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2008,Whole,734
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2009,Kharif,811
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2009,Rabi,970
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2009,Whole,838
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2010,Kharif,1006
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2010,Rabi,1166
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2010,Whole,1041
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2011,Kharif,976
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2011,Rabi,1249
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2011,Whole,1018
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2012,Kharif,914
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2012,Rabi,1304
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2012,Whole,1005
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2013,Kharif,1309
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2013,Rabi,1833
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2013,Whole,1387
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2014,Kharif,1734
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2014,Rabi,2005
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2014,Whole,1756
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2015,Kharif,1738
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2015,Rabi,1789
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2015,Whole,1743
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2016,Kharif,1609
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2016,Rabi,1428
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2016,Whole,1591
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2017,Kharif,1776
+FHP,"Finger Millet (Ragi)",Andhra Pradesh,2017,Rabi,2894
+FHP,"Finger Millet (Ragi)",Bihar,1999,Whole,366
+FHP,"Finger Millet (Ragi)",Bihar,2000,Whole,410
+FHP,"Finger Millet (Ragi)",Bihar,2001,Whole,372
+FHP,"Finger Millet (Ragi)",Bihar,2002,Whole,365
+FHP,"Finger Millet (Ragi)",Bihar,2003,Whole,327
+FHP,"Finger Millet (Ragi)",Bihar,2004,Whole,354
+FHP,"Finger Millet (Ragi)",Bihar,2005,Whole,382
+FHP,"Finger Millet (Ragi)",Bihar,2006,Whole,428
+FHP,"Finger Millet (Ragi)",Bihar,2007,Whole,425
+FHP,"Finger Millet (Ragi)",Bihar,2008,Whole,477
+FHP,"Finger Millet (Ragi)",Bihar,2009,Whole,543
+FHP,"Finger Millet (Ragi)",Bihar,2010,Whole,627
+FHP,"Finger Millet (Ragi)",Bihar,2011,Whole,725
+FHP,"Finger Millet (Ragi)",Bihar,2012,Whole,795
+FHP,"Finger Millet (Ragi)",Bihar,2013,Whole,863
+FHP,"Finger Millet (Ragi)",Bihar,2014,Whole,935
+FHP,"Finger Millet (Ragi)",Bihar,2015,Whole,1000
+FHP,"Finger Millet (Ragi)",Bihar,2016,Whole,1066
+FHP,"Finger Millet (Ragi)",Bihar,2017,Whole,1062
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2003,Kharif,822
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2003,Rabi,940
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2005,Whole,908
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2006,Whole,712
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2007,Whole,781
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2008,Whole,955
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2009,Whole,1385
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2010,Whole,1289
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2011,Whole,1231
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2013,Whole,6000
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2014,Whole,2979
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2015,Whole,2143
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2016,Whole,1744
+FHP,"Finger Millet (Ragi)",Chhattisgarh,2017,Whole,2568
+FHP,"Finger Millet (Ragi)",Goa,1999,Whole,550
+FHP,"Finger Millet (Ragi)",Goa,2000,Whole,560
+FHP,"Finger Millet (Ragi)",Goa,2001,Whole,600
+FHP,"Finger Millet (Ragi)",Goa,2002,Whole,700
+FHP,"Finger Millet (Ragi)",Goa,2003,Whole,650
+FHP,"Finger Millet (Ragi)",Goa,2004,Whole,600
+FHP,"Finger Millet (Ragi)",Goa,2005,Whole,764
+FHP,"Finger Millet (Ragi)",Goa,2006,Whole,850
+FHP,"Finger Millet (Ragi)",Goa,2007,Whole,850
+FHP,"Finger Millet (Ragi)",Goa,2008,Whole,1125
+FHP,"Finger Millet (Ragi)",Goa,2009,Whole,1169
+FHP,"Finger Millet (Ragi)",Goa,2010,Whole,1190
+FHP,"Finger Millet (Ragi)",Goa,2011,Whole,1420
+FHP,"Finger Millet (Ragi)",Goa,2012,Whole,1485
+FHP,"Finger Millet (Ragi)",Goa,2013,Whole,1505
+FHP,"Finger Millet (Ragi)",Goa,2014,Whole,2530
+FHP,"Finger Millet (Ragi)",Goa,2015,Whole,3000
+FHP,"Finger Millet (Ragi)",Goa,2016,Whole,3500
+FHP,"Finger Millet (Ragi)",Goa,2017,Whole,3500
+FHP,"Finger Millet (Ragi)",Gujarat,1999,Whole,525
+FHP,"Finger Millet (Ragi)",Gujarat,2000,Whole,545
+FHP,"Finger Millet (Ragi)",Gujarat,2001,Whole,545
+FHP,"Finger Millet (Ragi)",Gujarat,2002,Whole,523
+FHP,"Finger Millet (Ragi)",Gujarat,2003,Whole,555
+FHP,"Finger Millet (Ragi)",Gujarat,2004,Whole,676
+FHP,"Finger Millet (Ragi)",Gujarat,2005,Whole,561
+FHP,"Finger Millet (Ragi)",Gujarat,2006,Whole,569
+FHP,"Finger Millet (Ragi)",Gujarat,2007,Whole,617
+FHP,"Finger Millet (Ragi)",Gujarat,2008,Whole,662
+FHP,"Finger Millet (Ragi)",Gujarat,2009,Whole,809
+FHP,"Finger Millet (Ragi)",Gujarat,2010,Whole,1068
+FHP,"Finger Millet (Ragi)",Gujarat,2011,Whole,1321
+FHP,"Finger Millet (Ragi)",Gujarat,2012,Whole,1210
+FHP,"Finger Millet (Ragi)",Gujarat,2013,Whole,1422
+FHP,"Finger Millet (Ragi)",Gujarat,2014,Whole,1457
+FHP,"Finger Millet (Ragi)",Gujarat,2015,Whole,1400
+FHP,"Finger Millet (Ragi)",Gujarat,2016,Whole,1400
+FHP,"Finger Millet (Ragi)",Gujarat,2017,Whole,1975
+FHP,"Finger Millet (Ragi)",Karnataka,2002,Whole,374
+FHP,"Finger Millet (Ragi)",Karnataka,2003,Whole,481
+FHP,"Finger Millet (Ragi)",Karnataka,2004,Whole,436
+FHP,"Finger Millet (Ragi)",Karnataka,2005,Kharif,282
+FHP,"Finger Millet (Ragi)",Karnataka,2005,Rabi,184
+FHP,"Finger Millet (Ragi)",Karnataka,2005,Whole,239
+FHP,"Finger Millet (Ragi)",Karnataka,2006,Kharif,467
+FHP,"Finger Millet (Ragi)",Karnataka,2006,Rabi,455
+FHP,"Finger Millet (Ragi)",Karnataka,2007,Kharif,564
+FHP,"Finger Millet (Ragi)",Karnataka,2007,Rabi,682
+FHP,"Finger Millet (Ragi)",Karnataka,2007,Whole,670
+FHP,"Finger Millet (Ragi)",Karnataka,2008,Kharif,668
+FHP,"Finger Millet (Ragi)",Karnataka,2008,Rabi,697
+FHP,"Finger Millet (Ragi)",Karnataka,2008,Whole,774
+FHP,"Finger Millet (Ragi)",Karnataka,2009,Kharif,821
+FHP,"Finger Millet (Ragi)",Karnataka,2009,Rabi,869
+FHP,"Finger Millet (Ragi)",Karnataka,2009,Whole,862
+FHP,"Finger Millet (Ragi)",Karnataka,2010,Kharif,878
+FHP,"Finger Millet (Ragi)",Karnataka,2010,Rabi,906
+FHP,"Finger Millet (Ragi)",Karnataka,2010,Whole,916
+FHP,"Finger Millet (Ragi)",Karnataka,2011,Kharif,919
+FHP,"Finger Millet (Ragi)",Karnataka,2011,Rabi,872
+FHP,"Finger Millet (Ragi)",Karnataka,2011,Whole,1031
+FHP,"Finger Millet (Ragi)",Karnataka,2012,Kharif,957
+FHP,"Finger Millet (Ragi)",Karnataka,2012,Rabi,954
+FHP,"Finger Millet (Ragi)",Karnataka,2012,Whole,1079
+FHP,"Finger Millet (Ragi)",Karnataka,2013,Kharif,1790
+FHP,"Finger Millet (Ragi)",Karnataka,2013,Rabi,1745
+FHP,"Finger Millet (Ragi)",Karnataka,2013,Whole,1844
+FHP,"Finger Millet (Ragi)",Karnataka,2014,Kharif,1640
+FHP,"Finger Millet (Ragi)",Karnataka,2014,Rabi,1757
+FHP,"Finger Millet (Ragi)",Karnataka,2015,Kharif,1531
+FHP,"Finger Millet (Ragi)",Karnataka,2015,Rabi,1725
+FHP,"Finger Millet (Ragi)",Karnataka,2017,Kharif,2423
+FHP,"Finger Millet (Ragi)",Karnataka,2017,Rabi,2259
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2000,Whole,609
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2003,Whole,764
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2008,Whole,1000
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2009,Whole,1821
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2010,Whole,2000
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2011,Whole,2000
+FHP,"Finger Millet (Ragi)","Madhya Pradesh",2012,Whole,2200
+FHP,"Finger Millet (Ragi)",Maharashtra,1999,Whole,458
+FHP,"Finger Millet (Ragi)",Maharashtra,2000,Whole,530
+FHP,"Finger Millet (Ragi)",Maharashtra,2001,Whole,533
+FHP,"Finger Millet (Ragi)",Maharashtra,2002,Whole,527
+FHP,"Finger Millet (Ragi)",Maharashtra,2003,Whole,525
+FHP,"Finger Millet (Ragi)",Maharashtra,2004,Whole,515
+FHP,"Finger Millet (Ragi)",Maharashtra,2005,Whole,516
+FHP,"Finger Millet (Ragi)",Maharashtra,2006,Whole,556
+FHP,"Finger Millet (Ragi)",Maharashtra,2007,Whole,585
+FHP,"Finger Millet (Ragi)",Maharashtra,2008,Whole,576
+FHP,"Finger Millet (Ragi)",Maharashtra,2009,Whole,863
+FHP,"Finger Millet (Ragi)",Maharashtra,2010,Whole,899
+FHP,"Finger Millet (Ragi)",Maharashtra,2014,Whole,1796
+FHP,"Finger Millet (Ragi)",Maharashtra,2015,Whole,2139
+FHP,"Finger Millet (Ragi)",Maharashtra,2016,Whole,1837
+FHP,"Finger Millet (Ragi)",Maharashtra,2017,Whole,2605
+FHP,"Finger Millet (Ragi)",Odisha,1999,Whole,390
+FHP,"Finger Millet (Ragi)",Odisha,2000,Whole,417
+FHP,"Finger Millet (Ragi)",Odisha,2001,Whole,400
+FHP,"Finger Millet (Ragi)",Odisha,2002,Whole,397
+FHP,"Finger Millet (Ragi)",Odisha,2003,Whole,430
+FHP,"Finger Millet (Ragi)",Odisha,2004,Whole,491
+FHP,"Finger Millet (Ragi)",Odisha,2005,Whole,523
+FHP,"Finger Millet (Ragi)",Odisha,2006,Whole,546
+FHP,"Finger Millet (Ragi)",Odisha,2008,Whole,583
+FHP,"Finger Millet (Ragi)",Odisha,2009,Whole,757
+FHP,"Finger Millet (Ragi)",Odisha,2010,Whole,961
+FHP,"Finger Millet (Ragi)",Odisha,2011,Whole,932
+FHP,"Finger Millet (Ragi)",Odisha,2012,Whole,1005
+FHP,"Finger Millet (Ragi)",Odisha,2013,Whole,1119
+FHP,"Finger Millet (Ragi)",Odisha,2014,Whole,1242
+FHP,"Finger Millet (Ragi)",Odisha,2015,Whole,1316
+FHP,"Finger Millet (Ragi)",Odisha,2016,Whole,1511
+FHP,"Finger Millet (Ragi)",Odisha,2017,Whole,1646
+FHP,"Finger Millet (Ragi)","Tamil Nadu",1999,Whole,442
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2000,Whole,450
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2001,Whole,374
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2002,Whole,448
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2003,Whole,505
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2004,Whole,568
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2005,Whole,535
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2006,Whole,534
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2007,Whole,573
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2008,Whole,751
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2009,Whole,849
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2010,Whole,989
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2011,Whole,1146
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2012,Whole,1245
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2013,Whole,1805
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2014,Whole,2150
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2015,Whole,2157
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2016,Whole,2055
+FHP,"Finger Millet (Ragi)","Tamil Nadu",2017,Whole,2236
+FHP,"Finger Millet (Ragi)",Puducherry,1999,Whole,430
+FHP,"Finger Millet (Ragi)",Puducherry,2000,Whole,447
+FHP,"Finger Millet (Ragi)",Puducherry,2003,Whole,627
+FHP,"Finger Millet (Ragi)",Puducherry,2004,Whole,582
+FHP,"Finger Millet (Ragi)",Puducherry,2005,Whole,455
+FHP,"Finger Millet (Ragi)",Puducherry,2006,Whole,515
+FHP,"Finger Millet (Ragi)",Puducherry,2007,Whole,580
+FHP,"Finger Millet (Ragi)",Puducherry,2008,Whole,771
+FHP,"Finger Millet (Ragi)",Puducherry,2009,Whole,818
+FHP,"Finger Millet (Ragi)",Puducherry,2010,Whole,1000
+FHP,"Finger Millet (Ragi)",Puducherry,2011,Whole,1043
+FHP,"Finger Millet (Ragi)",Puducherry,2012,Whole,1078
+FHP,"Finger Millet (Ragi)",Puducherry,2013,Whole,1419
+FHP,"Finger Millet (Ragi)",Puducherry,2014,Whole,1729
+FHP,"Finger Millet (Ragi)",Puducherry,2015,Whole,1885
+FHP,"Finger Millet (Ragi)",Puducherry,2016,Whole,1642
+FHP,"Finger Millet (Ragi)",Puducherry,2017,Whole,1919
+FHP,"Finger Millet (Ragi)",Telangana,2015,Kharif,1369
+FHP,"Finger Millet (Ragi)",Telangana,2015,Rabi,1329
+FHP,"Finger Millet (Ragi)",Telangana,2015,Whole,1361
+FHP,"Finger Millet (Ragi)",Telangana,2016,Kharif,1614
+FHP,"Finger Millet (Ragi)",Telangana,2016,Rabi,1678
+FHP,"Finger Millet (Ragi)",Telangana,2016,Whole,1644
+FHP,"Finger Millet (Ragi)",Telangana,2017,Whole,2367
+FHP,"Finger Millet (Ragi)",Uttarakhand,1999,Whole,465
+FHP,"Finger Millet (Ragi)",Uttarakhand,2001,Whole,363
+FHP,"Finger Millet (Ragi)",Uttarakhand,2007,Whole,1765
+FHP,"Finger Millet (Ragi)",Uttarakhand,2008,Whole,2068
+FHP,"Finger Millet (Ragi)",Uttarakhand,2009,Whole,2151
+FHP,"Finger Millet (Ragi)",Uttarakhand,2010,Whole,1681
+FHP,"Finger Millet (Ragi)",Uttarakhand,2011,Whole,1699
+FHP,"Finger Millet (Ragi)",Uttarakhand,2012,Whole,2109
+FHP,"Finger Millet (Ragi)",Uttarakhand,2013,Whole,3144
+FHP,"Finger Millet (Ragi)",Uttarakhand,2014,Whole,3103
+FHP,"Finger Millet (Ragi)",Uttarakhand,2015,Whole,2959
+FHP,"Finger Millet (Ragi)",Uttarakhand,2016,Whole,2964
+FHP,"Finger Millet (Ragi)",Uttarakhand,2017,Whole,2969
+

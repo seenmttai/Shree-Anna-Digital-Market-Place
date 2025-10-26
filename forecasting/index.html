@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shree Anna Market Forecasts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "d3": "https://esm.sh/d3@7",
+      "uplot": "https://esm.sh/uplot@1.6.30",
+      "uplot-css": "https://esm.sh/uplot@1.6.30/dist/uPlot.min.css",
+      "lodash": "https://esm.sh/lodash-es@4.17.21"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Shree Anna Market Forecasts</h1>
+      <p class="subtitle">Future market trends for millet crops in India</p>
+    </div>
+    <div class="actions">
+      <label class="file">
+        <input id="fileInput" type="file" multiple accept=".csv,.tsv,.txt" />
+        <span>Upload CSVs</span>
+      </label>
+      <select id="demoDataSelect">
+        <option value="">-- Load Demo Data --</option>
+        <option value="1">Demo Dataset 1</option>
+        <option value="2">Demo Dataset 2</option>
+        <option value="3">Demo Dataset 3</option>
+        <option value="4">Demo Dataset 4</option>
+        <option value="5">Demo Dataset 5</option>
+        <option value="6">Demo Dataset 6</option>
+        <option value="7">Demo Dataset 7</option>
+        <option value="8">Demo Dataset 8</option>
+        <option value="9">Demo Dataset 9</option>
+        <option value="10">Demo Dataset 10</option>
+        <option value="11">Demo Dataset 11</option>
+        <option value="12">Demo Dataset 12</option>
+        <option value="13">Demo Dataset 13</option>
+        <option value="14">Demo Dataset 14</option>
+        <option value="15">Demo Dataset 15</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <section>
+        <h3>Create Your Price Prediction</h3>
+        <label>
+          What do you want to predict?
+          <select id="targetSelect">
+            <option value="FHP_whole">Market Price (Rs. per Quintal)</option>
+            <option value="Yield">Yield (Kg per Hectare)</option>
+            <option value="Prod">Total Production (Tonnes)</option>
+            <option value="NetRet">Profit (Rs. per Hectare)</option>
+            <option value="ExportsTot">Export Demand (Tonnes)</option>
+          </select>
+        </label>
+        <label>
+          Which crop are you growing?
+          <select id="cropSelect">
+            <option>Sorghum/Jowar</option>
+            <option>Pearl Millet/Bajra</option>
+            <option>Finger Millet/Ragi</option>
+            <option>Small/Minor Millets</option>
+          </select>
+        </label>
+        <label>
+          Which state are you in?
+          <select id="stateSelect">
+            <option value="__NATIONAL__">All India (National)</option>
+          </select>
+        </label>
+        <label>
+          How many years into the future?
+          <input id="horizonInput" type="number" min="1" max="6" step="1" value="3" />
+        </label>
+        <fieldset class="featureGroups">
+          <legend>What affects your crop's price?</legend>
+          <label><input type="checkbox" class="fg" data-block="A" checked /> Past Prices & Government MSP</label>
+          <label><input type="checkbox" class="fg" data-block="B" checked /> Sowing Area & Harvest Amount</label>
+          <label><input type="checkbox" class="fg" data-block="C" checked /> Farming Costs & Profitability</label>
+          <label><input type="checkbox" class="fg" data-block="D" checked /> Demand from Other Countries</label>
+          <label><input type="checkbox" class="fg" data-block="E" checked /> How People are Eating Millets</label>
+          <label><input type="checkbox" class="fg" data-block="F" checked /> Special Events (like new policies)</label>
+        </fieldset>
+        <button id="runBtn">Predict Prices</button>
+      </section>
+
+      <section>
+        <h3>Fine-Tuning (for experts)</h3>
+        <label>
+          Model Caution (λ)
+          <span class="tooltip" title="Tells the computer how cautious to be. Higher numbers mean it will ignore small, unimportant details in the data, which can make the prediction more stable.">?</span>
+          <input id="lambdaInput" type="number" min="0" step="0.1" value="2.0" />
+        </label>
+        <label>
+          How many past years to remember?
+          <span class="tooltip" title="How many years of past data the computer should directly look at to see trends. For example, if last year's price was high, this year's might be too.">?</span>
+          <input id="lagsInput" type="number" min="0" max="5" step="1" value="2" />
+        </label>
+        <label>
+          How many recent years to learn from?
+          <span class="tooltip" title="The number of recent years the computer learns from. A smaller number helps the computer adapt to new changes in the market faster.">?</span>
+          <input id="windowInput" type="number" min="6" max="20" step="1" value="10" />
+        </label>
+        <label>
+          Accuracy Checks
+          <span class="tooltip" title="How many times the computer checks its own work using old data to see how accurate it is. More checks are more robust but slower.">?</span>
+          <input id="cvInput" type="number" min="2" max="6" step="1" value="3" />
+        </label>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div class="card wide" id="welcome-card">
+        <h3>Welcome, Farmer!</h3>
+        <p>This tool helps you predict future market prices and yields for your millet crops. By looking at past data, it tries to guess what will happen in the next few years. This can help you decide when to sell your crops, what to grow next season, and how to plan for your family's future.</p>
+        
+        <h4>How to Use This Tool</h4>
+        <ol>
+          <li>On the left, choose the crop, state, and what you want to predict (like 'Market Price').</li>
+          <li>Click the <strong>'Predict Prices'</strong> button.</li>
+          <li>The charts will show you the prediction and what factors are most important.</li>
+        </ol>
+
+        <h4>Using Your Own Data (Optional)</h4>
+        <p>You can upload your own data using a CSV file (like an Excel sheet). The file should have columns with clear headers. For example:</p>
+        <p><code>year, crop, state, Price, Yield, Area</code><br>
+           <code>2022, Bajra, Rajasthan, 2300, 1200, 5000</code><br>
+           <code>2023, Bajra, Rajasthan, 2350, 1250, 5100</code>
+        </p>
+        <p>The tool is smart enough to understand many column names like 'price', 'market rate', 'yield', 'production', 'cost', 'msp', etc. You can start by downloading our demo data to see an example.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3 id="forecastTitle">Forecast</h3>
+          <div id="chartTarget" class="chart"></div>
+        </div>
+        <div class="card">
+          <h3>What's Driving the Forecast?</h3>
+          <div id="chartDrivers" class="chart"></div>
+          <div id="driversList" class="list"></div>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>How Accurate is the Model?</h3>
+          <div id="chartResiduals" class="chart"></div>
+          <div id="metrics" class="metrics"></div>
+        </div>
+        <div class="card">
+          <h3>Key Takeaways</h3>
+          <ul id="insights" class="insights"></ul>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <h3>Data Used for Prediction (Latest Year)</h3>
+        <div id="featureTable" class="table"></div>
+      </div>
+    </section>
+  </main>
+
+  <link rel="stylesheet" href="https://esm.sh/uplot@1.6.30/dist/uPlot.min.css">
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

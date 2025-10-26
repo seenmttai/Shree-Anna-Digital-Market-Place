@@ -1,4 +1,4 @@
-import { supabase, getCurrentUser, signIn, signUp, signOut } from './supabase-client.js';
+import { supabase, getCurrentUser, signIn, signUp, signOut, signInWithMagicLink } from './supabase-client.js';
 
 let currentUser = null;
 
@@ -21,33 +21,49 @@ function updateUI() {
 function setupEventListeners() {
     // Login modal
     const loginBtn = document.getElementById('loginBtn');
-    const registerBtn = document.getElementById('registerBtn');
-    const modal = document.getElementById('loginModal');
-    const closeBtn = modal.querySelector('.modal-close');
+    const loginModal = document.getElementById('loginModal');
+    const loginCloseBtn = loginModal.querySelector('.modal-close');
     
     loginBtn.addEventListener('click', () => {
         if (!currentUser) {
-            modal.classList.add('active');
+            loginModal.classList.add('active');
         }
     });
     
-    registerBtn.addEventListener('click', () => {
-        modal.classList.add('active');
+    loginCloseBtn.addEventListener('click', () => {
+        loginModal.classList.remove('active');
     });
     
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
+    loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.classList.remove('active');
+        }
     });
+
+    // Register modal
+    const registerBtn = document.getElementById('registerBtn');
+    const registerModal = document.getElementById('registerModal');
+    const registerCloseBtn = registerModal.querySelector('.modal-close');
     
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            registerModal.classList.add('active');
+        });
+    }
+
+    registerCloseBtn.addEventListener('click', () => {
+        registerModal.classList.remove('active');
+    });
+
+    registerModal.addEventListener('click', (e) => {
+        if (e.target === registerModal) {
+            registerModal.classList.remove('active');
         }
     });
     
-    // Auth form
-    const authForm = document.getElementById('authForm');
-    authForm.addEventListener('submit', handleAuth);
+    // Auth forms
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
+    document.getElementById('registerForm').addEventListener('submit', handleRegister);
     
     // Language selector (simplified)
     const langSelect = document.getElementById('langSelect');
@@ -70,30 +86,40 @@ function setupEventListeners() {
     }
 }
 
-async function handleAuth(e) {
+async function handleLogin(e) {
     e.preventDefault();
     
-    const identifier = document.getElementById('authIdentifier').value;
-    const password = document.getElementById('authPassword').value;
-    const userType = document.getElementById('userType').value;
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
     
-    // Simple auth - in production, this would be more robust
-    const { data, error } = await signIn(identifier, password);
+    const { data, error } = await signIn(email, password);
     
     if (error) {
-        // Try sign up
-        const { data: signUpData, error: signUpError } = await signUp(identifier, password, {
-            user_type: userType,
-            name: identifier.split('@')[0]
-        });
-        
-        if (signUpError) {
-            alert('Authentication failed: ' + signUpError.message);
-            return;
-        }
+        alert('Login failed: ' + error.message);
+        return;
     }
     
     location.reload();
+}
+
+async function handleRegister(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('registerEmail').value;
+    const userType = document.getElementById('registerUserType').value;
+    const name = document.getElementById('registerName').value;
+
+    const { data, error } = await signInWithMagicLink(email, {
+        user_type: userType,
+        name: name
+    });
+    
+    if (error) {
+        alert('Registration failed: ' + error.message);
+    } else {
+        document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('magicLinkMessage').style.display = 'block';
+    }
 }
 
 function setupVoiceCommands() {

@@ -35,6 +35,20 @@ export async function getCurrentUser() {
     return user;
 }
 
+export async function signInWithMagicLink(email, userData = {}) {
+    const options = {
+        emailRedirectTo: window.location.origin,
+    };
+    if (Object.keys(userData).length > 0) {
+        options.data = userData;
+    }
+    const { data, error } = await supabase.auth.signInWithOtp({
+        email,
+        options,
+    });
+    return { data, error };
+}
+
 // Database helpers
 export async function getProducts(filters = {}) {
     let query = supabase.from('products').select('*, seller:users(name, user_type)');
@@ -264,4 +278,3 @@ export async function getExportOpportunities() {
         .order('created_at', { ascending: false });
     return { data, error };
 }
-

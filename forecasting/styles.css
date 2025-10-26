@@ -1,0 +1,110 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #0f172a;
+  --accent-2: #334155;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+}
+.topbar .brand h1 { margin: 0; font-size: 20px; font-weight: 600; }
+.topbar .subtitle { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+.topbar .actions { display: flex; gap: 8px; align-items: center; }
+.topbar button, .topbar .file span, .topbar select {
+  border: 1px solid var(--line); background: #fff; padding: 8px 10px; cursor: pointer; border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+}
+.topbar .file { position: relative; overflow: hidden; }
+.topbar .file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.layout { display: grid; grid-template-columns: 320px 1fr; gap: 16px; padding: 16px; }
+.panel { border-right: 1px solid var(--line); padding-right: 12px; }
+.panel section { margin-bottom: 18px; }
+.panel h3 { margin: 0 0 8px; font-size: 14px; }
+.panel label, .panel fieldset { display: block; margin: 8px 0; font-size: 13px; color: var(--accent-2); position: relative; }
+.panel input, .panel select { width: 100%; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--fg); }
+.panel fieldset { border: 1px solid var(--line); padding: 8px; border-radius: 6px; }
+.panel fieldset legend { padding: 0 6px; }
+
+.panel label .tooltip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--muted);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  line-height: 16px;
+  cursor: help;
+  font-style: normal;
+}
+
+.content { padding: 0 8px; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fff; }
+.card h3 { margin: 0 0 8px; font-size: 14px; }
+.card.wide { grid-column: 1 / span 2; }
+
+#welcome-card {
+  background-color: #f0f9ff;
+  border-color: #e0f2fe;
+}
+#welcome-card h3 { color: var(--accent); }
+#welcome-card h4 { margin: 12px 0 4px; font-size: 13px; font-weight: 600; }
+#welcome-card p, #welcome-card li { font-size: 13px; color: var(--accent-2); line-height: 1.6; margin-top: 4px; }
+#welcome-card ol { padding-left: 20px; }
+#welcome-card code { background: #e0f2fe; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+
+
+.chart { height: 280px; }
+/* Add positioning to avoid legend overlap */
+.chart { position: relative; }
+
+/* uPlot legend: place below plot area and allow wrapping */
+.chart .u-legend {
+  position: static !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* Ensure internal wrapper doesn't clip legend */
+.chart .u-wrap {
+  overflow: visible;
+}
+
+/* Slightly increase height on small screens to accommodate legend */
+@media (max-width: 640px) {
+  .chart { height: 320px; }
+}
+/* On wider cards give a bit more room for legends */
+@media (min-width: 1024px) {
+  .card .chart { height: 300px; }
+}
+.metrics { font-size: 13px; color: var(--accent-2); display: grid; grid-auto-rows: minmax(16px, auto); gap: 4px; }
+.insights { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--accent-2); }
+.list { font-size: 13px; color: var(--accent-2); }
+
+.table { overflow: auto; max-height: 260px; border-top: 1px solid var(--line); }
+.table table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.table th, .table td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; white-space: nowrap; }
+.table th { position: sticky; top: 0; background: #fafafa; font-weight: 600; }
