@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bharat Millet Hub - Millet & Pulse Marketplace</title>
+    <title>Shree Anna - Millet & Pulse Marketplace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
                         <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
                     </svg>
                 </span>
-                <span class="logo-text">Bharat Millet Hub</span>
+                <span class="logo-text">Shree Anna</span>
             </div>
             <nav class="main-nav">
                 <a href="marketplace.html">Marketplace</a>
@@ -63,7 +63,7 @@
                 <p class="hero-subtitle" data-translate="hero.subtitle">
                     Helping farmers, groups and buyers trade millets & pulses easily and fairly
                 </p>
-                <div class="hero-actions">
+                <div class="hero-actions" id="heroActions">
                     <button class="btn-primary btn-large" onclick="location.href='marketplace.html'">
                         Browse Market
                     </button>
@@ -206,7 +206,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>About Bharat Millet Hub</h4>
+                    <h4>About Shree Anna</h4>
                     <p>Digital marketplace connecting the entire millet and pulse value chain</p>
                 </div>
                 <div class="footer-section">
@@ -225,12 +225,12 @@
                 </div>
                 <div class="footer-section">
                     <h4>Connect</h4>
-                    <p>Email: support@BharatMilletHub.in</p>
+                    <p>Email: support@shreeanna.in</p>
                     <p>Phone: 1800-XXX-XXXX</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Bharat Millet Hub. All rights reserved.</p>
+                <p>&copy; 2024 Shree Anna. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -249,7 +249,12 @@
                     <input type="password" id="loginPassword" required>
                 </div>
                 <button type="submit" class="btn-primary btn-block">Login</button>
+                <p style="text-align:center; margin-top:1rem; font-size:0.9rem;"><a href="#" id="forgotPassword">Forgot Password?</a></p>
             </form>
+            <p class="modal-switch">Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            <div id="loginMagicLinkMessage" style="display: none; margin-top: 1rem; color: var(--success); text-align: center;">
+                Check your email for a magic link to sign in!
+            </div>
         </div>
     </div>
 
@@ -267,6 +272,10 @@
                     <input type="email" id="registerEmail" required>
                 </div>
                 <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required minlength="6">
+                </div>
+                <div class="form-group">
                     <label for="registerUserType">I am a...</label>
                     <select id="registerUserType" required>
                         <option value="">Select Type</option>
@@ -278,10 +287,11 @@
                         <option value="consumer">Consumer</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary btn-block">Send Magic Link</button>
+                <button type="submit" class="btn-primary btn-block">Register</button>
             </form>
+            <p class="modal-switch">Already have an account? <a href="#" id="switchToLogin">Login</a></p>
             <div id="magicLinkMessage" style="display: none; margin-top: 1rem; color: var(--success); text-align: center;">
-                Check your email for a magic link to sign in!
+                Check your email to verify your account!
             </div>
         </div>
     </div>

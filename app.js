@@ -15,6 +15,13 @@ function updateUI() {
     if (currentUser) {
         loginBtn.textContent = 'Dashboard';
         loginBtn.onclick = () => location.href = 'dashboard.html';
+        
+        // Hide hero action buttons
+        const heroActions = document.getElementById('heroActions');
+        if(heroActions) {
+            heroActions.style.display = 'none';
+        }
+
     }
 }
 
@@ -40,6 +47,26 @@ function setupEventListeners() {
         }
     });
 
+    const forgotPasswordLink = document.getElementById('forgotPassword');
+    if(forgotPasswordLink) {
+        forgotPasswordLink.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            if (!email) {
+                alert('Please enter your email address to reset your password.');
+                return;
+            }
+            const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                redirectTo: window.location.origin,
+            });
+            if (error) {
+                alert('Error sending password reset email: ' + error.message);
+            } else {
+                alert('Password reset link sent to your email.');
+            }
+        });
+    }
+
     // Register modal
     const registerBtn = document.getElementById('registerBtn');
     const registerModal = document.getElementById('registerModal');
@@ -61,6 +88,19 @@ function setupEventListeners() {
         }
     });
     
+    // Modal switch links
+    document.getElementById('switchToRegister').addEventListener('click', (e) => {
+        e.preventDefault();
+        loginModal.classList.remove('active');
+        registerModal.classList.add('active');
+    });
+    
+    document.getElementById('switchToLogin').addEventListener('click', (e) => {
+        e.preventDefault();
+        registerModal.classList.remove('active');
+        loginModal.classList.add('active');
+    });
+
     // Auth forms
     document.getElementById('loginForm').addEventListener('submit', handleLogin);
     document.getElementById('registerForm').addEventListener('submit', handleRegister);
@@ -106,10 +146,11 @@ async function handleRegister(e) {
     e.preventDefault();
     
     const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
     const userType = document.getElementById('registerUserType').value;
     const name = document.getElementById('registerName').value;
 
-    const { data, error } = await signInWithMagicLink(email, {
+    const { data, error } = await signUp(email, password, {
         user_type: userType,
         name: name
     });
@@ -119,6 +160,7 @@ async function handleRegister(e) {
     } else {
         document.getElementById('registerForm').style.display = 'none';
         document.getElementById('magicLinkMessage').style.display = 'block';
+        document.getElementById('magicLinkMessage').textContent = 'Registration successful! Please check your email to verify your account.';
     }
 }
 

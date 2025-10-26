@@ -1,0 +1,78 @@
+import { supabase, getCurrentUser, createProduct } from './supabase-client.js';
+
+let currentUser = null;
+
+async function init() {
+    currentUser = await getCurrentUser();
+    if (!currentUser) {
+        location.href = 'index.html'; // Redirect if not logged in
+        return;
+    }
+    setupEventListeners();
+}
+
+function setupEventListeners() {
+    document.getElementById('productForm').addEventListener('submit', handleFormSubmit);
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+        await supabase.auth.signOut();
+        location.href = 'index.html';
+    });
+}
+
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    if (!currentUser) {
+        alert("You must be logged in to post a product.");
+        return;
+    }
+
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Posting...';
+
+    // In a real app, you would handle image uploads to Supabase Storage first
+    // For simplicity, we'll use placeholder images.
+    const placeholderImages = ["https://via.placeholder.com/400x300.png?text=Product+Image+1"];
+
+    const productData = {
+        seller_id: currentUser.id,
+        name: document.getElementById('productName').value,
+        category: document.getElementById('productCategory').value,
+        description: document.getElementById('productDescription').value,
+        stock_quantity: parseInt(document.getElementById('stockQuantity').value, 10),
+        unit: document.getElementById('unit').value,
+        retail_price: parseFloat(document.getElementById('retailPrice').value) || null,
+        wholesale_price: parseFloat(document.getElementById('wholesalePrice').value) || null,
+        wholesale_min_qty: parseInt(document.getElementById('wholesaleMinQty').value, 10) || null,
+        images: placeholderImages, // Using placeholder
+        // base_price is required in DB schema, let's use retail or wholesale
+        base_price: parseFloat(document.getElementById('retailPrice').value) || parseFloat(document.getElementById('wholesalePrice').value) || 0,
+    };
+
+    // Basic validation
+    if (!productData.retail_price && !productData.wholesale_price) {
+        alert("Please provide at least a retail or wholesale price.");
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Product';
+        return;
+    }
+    if (productData.wholesale_price && !productData.wholesale_min_qty) {
+        alert("Please provide a minimum quantity for wholesale pricing.");
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Product';
+        return;
+    }
+
+    const { data, error } = await createProduct(productData);
+
+    if (error) {
+        alert("Error posting product: " + error.message);
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Product';
+    } else {
+        alert("Product posted successfully!");
+        location.href = `marketplace.html`; // Or a product detail page: `product-detail.html?id=${data.id}`
+    }
+}
+
+document.addEventListener('DOMContentLoaded', init);

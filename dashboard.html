@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Shree Anna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-page {
+            padding: 2rem 0 4rem;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .dashboard-nav {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+        }
+        .dashboard-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .dashboard-nav a:hover {
+            background-color: var(--bg-light);
+        }
+        .dashboard-nav a.active {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+        .dashboard-content {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        .welcome-header {
+            margin-bottom: 2rem;
+        }
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .stat-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .stat-card p {
+            color: var(--text-secondary);
+        }
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo" onclick="location.href='index.html'">
+                <span class="logo-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v20" />
+                        <path d="M12 6c2 0 3.5-1.5 3.5-3.5M12 6c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 10c2 0 3.5-1.5 3.5-3.5M12 10c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 14c2 0 3.5-1.5 3.5-3.5M12 14c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
+                    </svg>
+                </span>
+                <span class="logo-text">Shree Anna</span>
+            </div>
+            <nav class="main-nav">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="rfq.html">RFQ</a>
+                <a href="auction.html">Auctions</a>
+                <a href="forecasting.html">Forecasting</a>
+                <a href="quality-checker.html">Quality Checker</a>
+                <a href="schemes.html">Schemes</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-primary" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container dashboard-page">
+        <div class="dashboard-grid">
+            <aside class="dashboard-nav">
+                <a href="#" class="active" data-section="overview">Overview</a>
+                <a href="post-product.html">Post New Product</a>
+                <a href="#" data-section="products">My Products</a>
+                <a href="#" data-section="orders">My Orders</a>
+                <a href="#" data-section="profile">My Profile</a>
+            </aside>
+            <section class="dashboard-content">
+                <div id="overview" class="content-section">
+                    <div class="welcome-header">
+                        <h1 id="welcomeMessage">Welcome back!</h1>
+                        <p>Here's a quick look at your activity.</p>
+                    </div>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <h3 id="stat-products">0</h3>
+                            <p>Active Listings</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="stat-orders">0</h3>
+                            <p>Pending Orders</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="stat-revenue">₹0</h3>
+                            <p>Total Sales</p>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="post-product.html" class="btn-primary">Post New Product</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+        }
+    }
+    </script>
+    <script src="supabase-client.js" type="module"></script>
+    <script src="dashboard.js" type="module"></script>
+</body>
+</html>
