@@ -3,7 +3,7 @@ import * as Features from "https://bharat-millet-hub.pages.dev/forecasting/src/f
 import * as Models from "https://bharat-millet-hub.pages.dev/forecasting/src/models.js";
 import * as Charts from "https://bharat-millet-hub.pages.dev/forecasting/src/charts.js";
 import * as Explain from "https://bharat-millet-hub.pages.dev/forecasting/src/explain.js";
-import * as UI from "https://bharat-millet-hub.pages.dev/forecasting/src/ui.js";
+import * as UI from "https://bharat-millet-hub.pages.dev/forecasting/src/UI.js";
 
 const els = {
   fileInput: document.getElementById("fileInput"),
