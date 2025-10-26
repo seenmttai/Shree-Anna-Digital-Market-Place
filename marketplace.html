@@ -172,30 +172,6 @@
         </div>
     </div>
 
-    <!-- Quality Check Modal -->
-    <div id="qcModal" class="modal">
-        <div class="modal-content modal-large">
-            <span class="modal-close">&times;</span>
-            <h2>Quality Verification</h2>
-            <div class="form-group">
-                <label for="qcFile">Upload grain image</label>
-                <input type="file" id="qcFile" accept="image/*">
-                <small class="muted">Top-down photo, plain white/black background works best.</small>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-                <div>
-                    <label>Input</label>
-                    <canvas id="qcInCanvas" width="640" height="480" style="border:1px solid var(--border);"></canvas>
-                </div>
-                <div>
-                    <label>Overlay</label>
-                    <canvas id="qcOutCanvas" width="640" height="480" style="border:1px solid var(--border);"></canvas>
-                </div>
-            </div>
-            <div id="qcResult" style="margin-top:1rem;font-weight:600;"></div>
-        </div>
-    </div>
-
     <script type="importmap">
     {
         "imports": {
@@ -206,7 +182,7 @@
     <script src="translations.js"></script>
     <script src="supabase-client.js" type="module"></script>
     <script src="https://docs.opencv.org/4.x/opencv.js"></script>
-    <script src="quality-checker.js"></script>
+    <script src="quality-grader.js"></script>
     <script src="marketplace.js" type="module"></script>
 </body>
 </html>
