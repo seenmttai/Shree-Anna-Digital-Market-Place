@@ -84,7 +84,7 @@ async function handleFormSubmit(e) {
         submitButton.textContent = 'Post Product';
     } else {
         alert("Product posted successfully!");
-        location.href = `marketplace.html`; // Or a product detail page: `product-detail.html?id=${data.id}`
+        location.href = `https://bharat-millet-hub.pages.dev/marketplace.html`; // Or a product detail page: `product-detail.html?id=${data.id}`
     }
 }
 
