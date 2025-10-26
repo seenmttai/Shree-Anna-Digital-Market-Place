@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grain Quality Scanner - Shree Anna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Professional, neutral QC panel aligned with site tokens */
+    .qc-page { padding: 2rem 0 4rem; }
+    .qc-row { display: grid; gap: 1rem 2rem; grid-template-columns: 360px 1fr; align-items: start; }
+    .qc-panel, .qc-canvas-wrap {
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .qc-canvas-wrap { overflow: auto; }
+    .qc-canvases { display: grid; gap: 1rem; }
+    canvas { border: 1px solid var(--border); max-width: 100%; height: auto; display: block; background: transparent; }
+    .metric { margin-top: 0.5rem; font-weight: 600; color: var(--text); }
+    .ok { color: var(--success); font-weight:700; } 
+    .warn { color: var(--warning); font-weight:700; } 
+    .bad { color: var(--error); font-weight:700; }
+    label { display:block; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text); }
+    .qc-actions { display:flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tips ul { padding-left: 1rem; margin-top:0.5rem; color: var(--text-secondary); }
+    .tips li { margin: 0.25rem 0; }
+    .muted { color: var(--text-secondary); font-size: 0.92rem; }
+    /* Responsiveness */
+    @media (max-width: 900px) {
+      .qc-row { grid-template-columns: 1fr; }
+      .qc-panel { order: 2; }
+      .qc-canvas-wrap { order: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo" onclick="location.href='index.html'">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v20" />
+            <path d="M12 6c2 0 3.5-1.5 3.5-3.5M12 6c-2 0-3.5-1.5-3.5-3.5" />
+            <path d="M12 10c2 0 3.5-1.5 3.5-3.5M12 10c-2 0-3.5-1.5-3.5-3.5" />
+            <path d="M12 14c2 0 3.5-1.5 3.5-3.5M12 14c-2 0-3.5-1.5-3.5-3.5" />
+            <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
+          </svg>
+        </span>
+        <span class="logo-text">Shree Anna</span>
+      </div>
+      <nav class="main-nav">
+        <a href="marketplace.html">Marketplace</a>
+        <a href="rfq.html">RFQ</a>
+        <a href="auction.html">Auctions</a>
+        <a href="forecasting.html">Forecasting</a>
+        <a href="schemes.html">Schemes</a>
+        <a href="quality-checker.html" class="active">Quality Scanner</a>
+      </nav>
+      <div class="header-actions">
+        <button class="voice-btn" id="voiceBtn" title="Voice Command">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+        </button>
+        <select id="langSelect" class="lang-select">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+        <button class="btn-primary" id="loginBtn">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container qc-page">
+    <div class="page-header">
+      <h1>Grain Quality Scanner</h1>
+      <p class="muted">Simple in-browser check — finds good, broken, discolored or foreign kernels and gives an A/B/C grade.</p>
+    </div>
+
+    <div class="qc-row">
+      <div class="qc-panel">
+        <div class="form-group">
+          <label for="file">Upload image</label>
+          <input type="file" id="file" accept="image/*" />
+          <div class="qc-actions">
+            <button id="loadSample" class="btn-secondary" type="button">Load Sample</button>
+            <button id="exportCsv" class="btn-secondary" type="button" disabled>Export CSV</button>
+          </div>
+          <small class="muted">Tip: Use a top-down shot, diffuse light, white or black matte background.</small>
+        </div>
+        <details style="margin-top:1rem;">
+          <summary>Advanced settings</summary>
+          <label>Target width (px): <input id="cfgWidth" type="number" value="1280"></label>
+          <label>Min area (px): <input id="cfgMinArea" type="number" value="70"></label>
+          <label>Watershed FG ratio (0.3–0.6): <input id="cfgFg" type="number" step="0.05" value="0.45"></label>
+          <label>Broken solidity max: <input id="cfgSol" type="number" step="0.01" value="0.90"></label>
+        </details>
+        <div class="metric" id="summary"></div>
+        <div id="selfCheck" class="metric muted"></div>
+        <div class="tips" style="margin-top:1rem;">
+          <h3>Capture Tips</h3>
+          <ul>
+            <li>Use plain white or black background</li>
+            <li>Take photo from above in soft light, avoid strong shadows</li>
+            <li>Spread kernels so they don't pile on top of each other</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qc-canvas-wrap">
+        <div class="qc-canvases">
+          <div>
+            <label>Input</label>
+            <canvas id="inCanvas" width="640" height="480"></canvas>
+          </div>
+          <div>
+            <label>Overlay</label>
+            <canvas id="outCanvas" width="640" height="480"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="importmap">
+  { "imports": { "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2" } }
+  </script>
+  <script src="translations.js"></script>
+  <script src="supabase-client.js" type="module"></script>
+  <script src="https://docs.opencv.org/4.x/opencv.js"></script>
+  <script src="quality-checker.js"></script>
+</body>
+</html>

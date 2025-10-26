@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Anna - Millet & Pulse Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v20" />
+                        <path d="M12 6c2 0 3.5-1.5 3.5-3.5M12 6c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 10c2 0 3.5-1.5 3.5-3.5M12 10c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 14c2 0 3.5-1.5 3.5-3.5M12 14c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
+                    </svg>
+                </span>
+                <span class="logo-text">Shree Anna</span>
+            </div>
+            <nav class="main-nav">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="rfq.html">RFQ</a>
+                <a href="auction.html">Auctions</a>
+                <a href="forecasting.html">Forecasting</a>
+                <a href="quality-checker.html">Quality Checker</a>
+                <a href="schemes.html">Schemes</a>
+            </nav>
+            <div class="header-actions">
+                <button class="voice-btn" id="voiceBtn" aria-label="Voice Command">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8" y1="23" x2="16" y2="23"/>
+                    </svg>
+                </button>
+                <select id="langSelect" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                    <option value="ml">മലയാളം</option>
+                </select>
+                <button class="btn-primary" id="loginBtn">Login / Register</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-translate="hero.title">
+                    Market for Farmers — Sell Your Millets & Pulses
+                </h1>
+                <p class="hero-subtitle" data-translate="hero.subtitle">
+                    Helping farmers, groups and buyers trade millets & pulses easily and fairly
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large" onclick="location.href='marketplace.html'">
+                        Browse Market
+                    </button>
+                    <button class="btn-secondary btn-large" id="registerBtn">
+                        Register to Sell
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-translate="features.title">Comprehensive Platform Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="10" width="3" height="10"></rect>
+                            <rect x="10.5" y="6" width="3" height="14"></rect>
+                            <rect x="18" y="3" width="3" height="17"></rect>
+                        </svg>
+                    </div>
+                    <h3>AI-Powered Forecasting</h3>
+                    <p>Predict yields, prices, and market trends for informed decision-making</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Quality Verification</h3>
+                    <p>Digital quality checks and certifications for premium produce</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M3 12a9 9 0 0 1 15.5-6.36"></path>
+                            <path d="M21 3v6h-6"></path>
+                            <path d="M21 12a9 9 0 0 1-15.5 6.36"></path>
+                            <path d="M3 21v-6h6"></path>
+                        </svg>
+                    </div>
+                    <h3>Reverse Auctions</h3>
+                    <p>Bulk buyers can get best prices through competitive bidding</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                        </svg>
+                    </div>
+                    <h3>Real-time Negotiation</h3>
+                    <p>Chat directly with buyers and sellers to agree on terms</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M3 12h18"></path>
+                            <path d="M12 3a15 15 0 0 1 0 18"></path>
+                            <path d="M12 3a15 15 0 0 0 0 18"></path>
+                        </svg>
+                    </div>
+                    <h3>Export Opportunities</h3>
+                    <p>Access international markets and expand your reach</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 7v5l3 3"></path>
+                        </svg>
+                    </div>
+                    <h3>Scheme Eligibility</h3>
+                    <p>Check and apply for government schemes and subsidies</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <path d="M3.29 7L12 12l8.71-5"/>
+                            <path d="M12 22V12"/>
+                        </svg>
+                    </div>
+                    <h3>Bulk Order Management</h3>
+                    <p>Efficient handling of large-scale orders with tiered pricing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M18 8a6 6 0 10-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </div>
+                    <h3>Price Alerts</h3>
+                    <p>Get notified when products reach your target price</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-types">
+        <div class="container">
+            <h2 class="section-title">Who We Serve</h2>
+            <div class="user-types-grid">
+                <div class="user-type-card">
+                    <h3>Farmers & FPOs</h3>
+                    <p>Direct market access, fair pricing, quality certifications, and forecasting tools</p>
+                </div>
+                <div class="user-type-card">
+                    <h3>SHGs</h3>
+                    <p>Platform for collective selling, scheme access, and capacity building</p>
+                </div>
+                <div class="user-type-card">
+                    <h3>Processors & Startups</h3>
+                    <p>Reliable sourcing, quality assurance, and bulk procurement options</p>
+                </div>
+                <div class="user-type-card">
+                    <h3>Consumers</h3>
+                    <p>Access to quality millets, traceability, and nutritional information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 data-translate="cta.title">Join the Millet Revolution</h2>
+            <p data-translate="cta.subtitle">Be part of India's nutritional security and climate resilience movement</p>
+            <button class="btn-primary btn-large" onclick="location.href='marketplace.html'">
+                Get Started Today
+            </button>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Shree Anna</h4>
+                    <p>Digital marketplace connecting the entire millet and pulse value chain</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="marketplace.html">Marketplace</a>
+                    <a href="forecasting.html">Forecasting</a>
+                    <a href="quality-checker.html">Quality Checker</a>
+                    <a href="schemes.html">Schemes</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Email: support@shreeanna.in</p>
+                    <p>Phone: 1800-XXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shree Anna. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Login / Register</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <label>Email or Phone</label>
+                    <input type="text" id="authIdentifier" required>
+                </div>
+                <div class="form-group">
+                    <label>User Type</label>
+                    <select id="userType" required>
+                        <option value="">Select Type</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="fpo">FPO</option>
+                        <option value="shg">SHG</option>
+                        <option value="processor">Processor</option>
+                        <option value="buyer">Bulk Buyer</option>
+                        <option value="consumer">Consumer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="authPassword" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+        }
+    }
+    </script>
+    <script src="translations.js"></script>
+    <script src="supabase-client.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>

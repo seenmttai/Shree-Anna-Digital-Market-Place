@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millet & Pulses Scheme Eligibility Checker | Government of India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background: #f5f5f5;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            background: #e8e8e8;
+        }
+        
+        .tab.active {
+            background: white;
+            border-bottom: 3px solid #667eea;
+            color: #667eea;
+        }
+        
+        .form-section {
+            padding: 30px;
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-group label .required {
+            color: #f44336;
+            margin-left: 3px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .radio-option label {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            margin-right: 10px;
+            width: auto;
+        }
+        
+        .results {
+            padding: 30px;
+            background: #f8f9fa;
+            display: none;
+            min-height: 200px;
+        }
+        
+        .results.show {
+            display: block;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .results-header h2 {
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .results-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .stat {
+            padding: 8px 15px;
+            background: white;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .stat.eligible {
+            color: #4caf50;
+            border: 2px solid #4caf50;
+        }
+        
+        .stat.not-eligible {
+            color: #f44336;
+            border: 2px solid #f44336;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #4caf50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .result-card.not-eligible {
+            border-left-color: #f44336;
+            opacity: 0.8;
+        }
+        
+        .result-card.high-priority {
+            border-left-color: #ff9800;
+            background: linear-gradient(to right, #fff8e1 0%, white 5%);
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .result-card h3 {
+            color: #333;
+            font-size: 20px;
+            flex: 1;
+            margin-bottom: 5px;
+        }
+        
+        .scheme-id {
+            font-size: 12px;
+            color: #999;
+            font-weight: 400;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .priority-high {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .priority-standard {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .priority-priority {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .benefit-text {
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        
+        .benefit-text strong {
+            color: #333;
+        }
+        
+        .reason-text {
+            color: #f44336;
+            background: #ffebee;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .apply-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .apply-link:hover {
+            background: #5568d3;
+        }
+        
+        .info-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .info-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .documents-list {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .documents-list h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .documents-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .documents-list li {
+            padding: 6px 0;
+            font-size: 13px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .documents-list li:before {
+            content: "📄";
+            font-size: 16px;
+        }
+        
+        .related-schemes {
+            margin-top: 15px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            border-left: 3px solid #2196f3;
+        }
+        
+        .related-schemes strong {
+            color: #1976d2;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .related-schemes span {
+            display: inline-block;
+            padding: 4px 10px;
+            background: white;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+            color: #1976d2;
+            font-weight: 600;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 40px;
+            display: none;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .dynamic-fields {
+            display: none;
+        }
+        
+        .dynamic-fields.show {
+            display: block;
+        }
+        
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #856404;
+        }
+        
+        .info-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .filter-section {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-section label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .filter-section select {
+            padding: 8px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .no-results h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .no-results p {
+            font-size: 16px;
+        }
+        
+        .scheme-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .tag.central {
+            background: #e8eaf6;
+            color: #3f51b5;
+        }
+        
+        .tag.state {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .benefit-amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4caf50;
+            margin: 10px 0;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .progress-step::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #e0e0e0;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+        }
+
+        .progress-step:first-child::before {
+            display: none;
+        }
+
+        .progress-step.active::before {
+            background: #667eea;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: white;
+        }
+
+        .progress-step.active .step-circle {
+            background: #667eea;
+        }
+
+        .step-label {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .progress-step.active .step-label {
+            color: #667eea;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher" onclick="alert('Multi-language support coming soon!')">
+                🌐 EN / हिंदी / ગુજરાતી
+            </div>
+            <h1>🌾 Help & Support Schemes — Find What You Can Get</h1>
+            <p>Help for farmers, groups and small processors for millets & pulses</p>
+            <p class="subtitle">Tell us a little about yourself — we will show schemes you can apply for</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('basic')">1. Basic Info</button>
+            <button class="tab" onclick="showTab('details')">2. More Details</button>
+            <button class="tab" onclick="showTab('project')">3. Your Project</button>
+        </div>
+        
+        <form id="eligibilityForm">
+            <!-- TAB 1: Basic Information -->
+            <div class="form-section active" id="tab-basic">
+                <div class="info-box">
+                    <strong>👋 Welcome!</strong>
+                    Let's find the best government schemes for you. This will take just 2-3 minutes.
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="beneficiary_type">I am a <span class="required">*</span></label>
+                        <select id="beneficiary_type" name="beneficiary_type" required onchange="updateDynamicFields()">
+                            <option value="">-- Select Your Category --</option>
+                            <option value="Farmer">Individual Farmer</option>
+                            <option value="FPO">Farmer Producer Organization (FPO)</option>
+                            <option value="SHG">Self-Help Group (SHG)</option>
+                            <option value="MSME">MSME / Food Processor</option>
+                            <option value="Startup">Startup / Entrepreneur</option>
+                            <option value="Cooperative">Cooperative Society</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <select id="state" name="state" required onchange="updateStateFields()">
+                            <option value="">-- Select State --</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Other">Other State</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row" id="location-fields" style="display:none;">
+                    <div class="form-group">
+                        <label for="district">District</label>
+                        <input type="text" id="district" name="district" placeholder="Enter your district">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taluka">Taluka / Block</label>
+                        <input type="text" id="taluka" name="taluka" placeholder="Enter your taluka">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>What do you want to do? <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="need_cultivation" name="need_cultivation">
+                        <label for="need_cultivation">Start/Improve Millet/Pulse Cultivation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="need_mechanization" name="need_mechanization">
+                        <label for="need_mechanization">Buy Farm Equipment/Machinery</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="need_processing" name="need_processing">
+                        <label for="need_processing">Set up Processing Unit</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="need_marketing" name="need_marketing">
+                        <label for="need_marketing">Sell Products at Better Prices</label>
+                    </div>
+                </div>
+
+                <button type="button" class="btn" onclick="showTab('details')">Next: Detailed Information →</button>
+            </div>
+
+            <!-- TAB 2: Detailed Information -->
+            <div class="form-section" id="tab-details">
+                <!-- Farmer-specific fields -->
+                <div id="farmer-fields" class="dynamic-fields">
+                    <h3 style="margin-bottom: 20px; color: #667eea;">Personal Details</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter your age">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">-- Select --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="caste_category">Social Category</label>
+                            <select id="caste_category" name="caste_category">
+                                <option value="">-- Select --</option>
+                                <option value="General">General</option>
+                                <option value="OBC">OBC (Other Backward Class)</option>
+                                <option value="SC">SC (Scheduled Caste)</option>
+                                <option value="ST">ST (Scheduled Tribe)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="farmer_category">Farmer Category</label>
+                            <select id="farmer_category" name="farmer_category">
+                                <option value="">-- Select --</option>
+                                <option value="Marginal">Marginal (Less than 1 hectare)</option>
+                                <option value="Small">Small (1-2 hectares)</option>
+                                <option value="Medium">Medium (2-4 hectares)</option>
+                                <option value="Large">Large (More than 4 hectares)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="education_level">Education Level</label>
+                            <select id="education_level" name="education_level">
+                                <option value="">-- Select --</option>
+                                <option value="Below 8th">Below 8th Standard</option>
+                                <option value="8th Pass">8th Pass</option>
+                                <option value="10th Pass">10th Pass</option>
+                                <option value="12th Pass">12th Pass</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Post-Graduate">Post-Graduate</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="land_area">Land Area (in hectares)</label>
+                            <input type="number" id="land_area" name="land_area" min="0" step="0.1" placeholder="e.g., 2.5">
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="has_bank_account" name="has_bank_account">
+                        <label for="has_bank_account">I have a bank account</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="has_land_records" name="has_land_records">
+                        <label for="has_land_records">I have land records (7/12 extract, land documents)</label>
+                    </div>
+                </div>
+
+                <!-- FPO-specific fields -->
+                <div id="fpo-fields" class="dynamic-fields">
+                    <h3 style="margin-bottom: 20px; color: #667eea;">FPO Details</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fpo_member_count">Number of Farmer Members</label>
+                            <input type="number" id="fpo_member_count" name="fpo_member_count" min="0" placeholder="e.g., 350">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fpo_years_experience">Years in Operation</label>
+                            <input type="number" id="fpo_years_experience" name="fpo_years_experience" min="0" placeholder="e.g., 3">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="annual_turnover_fpo">Annual Turnover (₹)</label>
+                            <input type="number" id="annual_turnover_fpo" name="annual_turnover" min="0" placeholder="e.g., 10000000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fpo_location_type">Location Type</label>
+                            <select id="fpo_location_type" name="fpo_location_type">
+                                <option value="">-- Select --</option>
+                                <option value="Plains">Plains</option>
+                                <option value="Hilly">Hilly/North-Eastern</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="fpo_registration_status" name="fpo_registration_status">
+                        <label for="fpo_registration_status">FPO is registered (under Companies Act or Co-operative Societies Act)</label>
+                    </div>
+                </div>
+
+                <!-- MSME/Startup-specific fields -->
+                <div id="msme-fields" class="dynamic-fields">
+                    <h3 style="margin-bottom: 20px; color: #667eea;">Business Details</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employee_count">Number of Employees</label>
+                            <input type="number" id="employee_count" name="employee_count" min="0" placeholder="e.g., 5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="annual_turnover_msme">Annual Turnover (₹)</label>
+                            <input type="number" id="annual_turnover_msme" name="annual_turnover" min="0" placeholder="e.g., 5000000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="investment_amount">Investment in Plant & Machinery (₹)</label>
+                            <input type="number" id="investment_amount" name="investment_amount" min="0" placeholder="e.g., 2000000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="msme_age">Age of Business Owner</label>
+                            <input type="number" id="msme_age" name="msme_age" min="18" max="100" placeholder="Enter age">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHG-specific fields -->
+                <div id="shg-fields" class="dynamic-fields">
+                    <h3 style="margin-bottom: 20px; color: #667eea;">SHG Details</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="shg_member_count">Number of SHG Members</label>
+                            <input type="number" id="shg_member_count" name="shg_member_count" min="0" placeholder="e.g., 15">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shg_years_active">Years Active</label>
+                            <input type="number" id="shg_years_active" name="shg_years_active" min="0" placeholder="e.g., 2">
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="shg_registered" name="shg_registered">
+                        <label for="shg_registered">SHG is registered</label>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="btn btn-secondary" onclick="showTab('basic')">← Back</button>
+                    <button type="button" class="btn" onclick="showTab('project')">Next: Project Details →</button>
+                </div>
+            </div>
+
+            <!-- TAB 3: Project Details -->
+            <div class="form-section" id="tab-project">
+                <div class="info-box">
+                    <strong>💡 Tip:</strong>
+                    Fill this section if you're planning to start a new project or expand existing operations. Leave blank if not applicable.
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project_cost">Total Project Cost (₹)</label>
+                        <input type="number" id="project_cost" name="project_cost" min="0" placeholder="e.g., 1000000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="promoter_contribution">Your Own Contribution (₹)</label>
+                        <input type="number" id="promoter_contribution" name="promoter_contribution" min="0" placeholder="e.g., 100000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="project_description">Brief Project Description</label>
+                    <textarea id="project_description" name="project_description" rows="3" placeholder="E.g., Setting up a millet flour processing unit with capacity of 1 ton/day"></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="is_new_unit" name="is_new_unit">
+                    <label for="is_new_unit">This is a completely new unit (not expansion)</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="is_odop_product" name="is_odop_product">
+                    <label for="is_odop_product">My product is ODOP (One District One Product) registered</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="is_credit_linked" name="is_credit_linked">
+                    <label for="is_credit_linked">I plan to take a bank loan for this project</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="has_fssai" name="has_fssai">
+                    <label for="has_fssai">I have or can obtain FSSAI license</label>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="btn btn-secondary" onclick="showTab('details')">← Back</button>
+                    <button type="submit" class="btn">🔍 Check My Eligibility</button>
+                </div>
+            </div>
+        </form>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 20px; color: #666; font-size: 16px;">Analyzing your eligibility across all schemes...</p>
+        </div>
+        
+        <div class="results" id="results">
+            <div class="results-header">
+                <h2>Your Personalized Results</h2>
+                <div class="results-stats">
+                    <div class="stat eligible" id="eligible-count">0 Eligible</div>
+                    <div class="stat not-eligible" id="not-eligible-count">0 Not Eligible</div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <label for="filter-jurisdiction">Filter:</label>
+                <select id="filter-jurisdiction" onchange="filterResults()">
+                    <option value="all">All Schemes</option>
+                    <option value="Central">Central Only</option>
+                    <option value="State">State Only</option>
+                </select>
+
+                <select id="filter-eligibility" onchange="filterResults()">
+                    <option value="all">All Results</option>
+                    <option value="eligible">Eligible Only</option>
+                    <option value="not-eligible">Not Eligible Only</option>
+                </select>
+            </div>
+
+            <div id="results-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let allResults = [];
+
+        // Tab navigation
+        function showTab(tabName) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById('tab-' + tabName).classList.add('active');
+            
+            // Add active class to selected tab
+            const tabs = document.querySelectorAll('.tab');
+            if (tabName === 'basic') tabs[0].classList.add('active');
+            else if (tabName === 'details') tabs[1].classList.add('active');
+            else if (tabName === 'project') tabs[2].classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update dynamic fields based on beneficiary type
+        function updateDynamicFields() {
+            const type = document.getElementById('beneficiary_type').value;
+            
+            // Hide all dynamic fields
+            document.querySelectorAll('.dynamic-fields').forEach(field => {
+                field.classList.remove('show');
+            });
+            
+            // Show location fields
+            document.getElementById('location-fields').style.display = 'grid';
+            
+            // Show relevant fields
+            if (type === 'Farmer') {
+                document.getElementById('farmer-fields').classList.add('show');
+            } else if (type === 'FPO') {
+                document.getElementById('fpo-fields').classList.add('show');
+            } else if (type === 'MSME' || type === 'Startup') {
+                document.getElementById('msme-fields').classList.add('show');
+            } else if (type === 'SHG') {
+                document.getElementById('shg-fields').classList.add('show');
+            }
+        }
+
+        function updateStateFields() {
+            const state = document.getElementById('state').value;
+            // Could add state-specific logic here
+        }
+
+        // Handle form submission
+        document.getElementById('eligibilityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('results').classList.remove('show');
+            
+            // Collect form data
+            const formData = collectFormData();
+            
+            // Simulate processing delay
+            setTimeout(() => {
+                // Check eligibility
+                const results = checkAllSchemes(formData);
+                
+                // Store results globally
+                allResults = results;
+                
+                // Hide loading
+                document.getElementById('loading').classList.remove('show');
+                
+                // Display results
+                displayResults(results);
+                
+                // Scroll to results
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        });
+
+        function collectFormData() {
+            const data = {
+                beneficiary_type: document.getElementById('beneficiary_type').value,
+                state: document.getElementById('state').value,
+                district: document.getElementById('district').value,
+                taluka: document.getElementById('taluka').value,
+                age: parseInt(document.getElementById('age').value) || null,
+                gender: document.getElementById('gender').value,
+                caste_category: document.getElementById('caste_category').value,
+                farmer_category: document.getElementById('farmer_category').value,
+                education_level: document.getElementById('education_level').value,
+                has_bank_account: document.getElementById('has_bank_account').checked,
+                has_land_records: document.getElementById('has_land_records').checked,
+                land_area: parseFloat(document.getElementById('land_area').value) || 0,
+                
+                // FPO fields
+                fpo_member_count: parseInt(document.getElementById('fpo_member_count').value) || 0,
+                fpo_years_experience: parseInt(document.getElementById('fpo_years_experience').value) || 0,
+                fpo_registration_status: document.getElementById('fpo_registration_status').checked,
+                fpo_location_type: document.getElementById('fpo_location_type').value,
+                
+                // MSME fields
+                employee_count: parseInt(document.getElementById('employee_count').value) || 0,
+                investment_amount: parseFloat(document.getElementById('investment_amount').value) || 0,
+                
+                // Get annual turnover from appropriate field
+                annual_turnover: parseFloat(document.getElementById('annual_turnover_fpo').value || document.getElementById('annual_turnover_msme').value) || 0,
+                
+                // Project fields
+                project_cost: parseFloat(document.getElementById('project_cost').value) || 0,
+                promoter_contribution: parseFloat(document.getElementById('promoter_contribution').value) || 0,
+                is_new_unit: document.getElementById('is_new_unit').checked,
+                is_odop_product: document.getElementById('is_odop_product').checked,
+                is_credit_linked: document.getElementById('is_credit_linked').checked,
+                
+                // Needs
+                need_cultivation: document.getElementById('need_cultivation').checked,
+                need_mechanization: document.getElementById('need_mechanization').checked,
+                need_processing: document.getElementById('need_processing').checked,
+                need_marketing: document.getElementById('need_marketing').checked
+            };
+            
+            return data;
+        }
+
+        // Main eligibility checking function
+        function checkAllSchemes(user) {
+            const results = [];
+            
+            // Central Schemes
+            results.push(checkNFSM(user));
+            results.push(checkSMAM(user));
+            results.push(checkPSS(user));
+            results.push(checkPMFME(user));
+            results.push(checkPMKSY(user));
+            results.push(checkPLISMBP(user));
+            results.push(checkFPOScheme(user));
+            results.push(checkNABARDPODF(user));
+            results.push(checkAIF(user));
+            
+            // Gujarat State Schemes
+            if (user.state === 'Gujarat') {
+                results.push(checkMilletDevScheme(user));
+                results.push(checkAGR2(user));
+                results.push(checkAGR50(user));
+                results.push(checkCMAgroScheme(user));
+            }
+            
+            // Filter out null results
+            return results.filter(r => r !== null);
+        }
+
+        // Scheme checking functions
+        function checkNFSM(user) {
+            if (user.beneficiary_type !== 'Farmer') {
+                return {
+                    scheme_id: 'NFSM',
+                    scheme_name: 'National Food Security Mission - Nutri-cereals and Pulses',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Only individual farmers are eligible for this scheme'
+                };
+            }
+            
+            let priority = 'Standard';
+            if ((user.farmer_category === 'Small' || user.farmer_category === 'Marginal') ||
+                (user.caste_category === 'SC' || user.caste_category === 'ST') ||
+                user.gender === 'Female') {
+                priority = 'High';
+            }
+            
+            return {
+                scheme_id: 'NFSM',
+                scheme_name: 'National Food Security Mission - Nutri-cereals and Pulses',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: priority,
+                benefit_summary: 'Cluster Demonstrations: ₹6,000/hectare for millets; Certified seeds assistance (up to 2 hectares); Farm machinery as per SMAM norms; Water application tools: ₹10,000 for pumpsets or 50% cost',
+                application_portal: 'Contact district/block agricultural office',
+                application_mode: 'Offline',
+                required_documents: ['Aadhaar Card', 'Bank Account Details', 'Land Records', 'Caste Certificate (if applicable)'],
+                value_chain_stage: ['Production', 'Cultivation']
+            };
+        }
+
+        function checkSMAM(user) {
+            if (!['Farmer', 'FPO', 'SHG', 'Cooperative'].includes(user.beneficiary_type)) {
+                return null;
+            }
+            
+            let subsidyRate = 40;
+            let priority = 'Standard';
+            
+            if (user.beneficiary_type === 'Farmer') {
+                if ((user.farmer_category === 'Small' || user.farmer_category === 'Marginal') ||
+                    (user.caste_category === 'SC' || user.caste_category === 'ST') ||
+                    user.gender === 'Female') {
+                    subsidyRate = 50;
+                    priority = 'High';
+                }
+            }
+            
+            return {
+                scheme_id: 'SMAM',
+                scheme_name: 'Sub-Mission on Agricultural Mechanization',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: priority,
+                benefit_summary: `Individual Ownership: ${subsidyRate}% subsidy on agricultural machinery; Custom Hiring Centers (CHC): 40% subsidy on project cost up to ₹250 lakhs`,
+                application_portal: 'Contact State Agriculture Department',
+                application_mode: 'Offline/Online (state dependent)',
+                required_documents: ['Aadhaar Card', 'Bank Account', 'Land Records (for farmers)'],
+                value_chain_stage: ['Mechanization']
+            };
+        }
+
+        function checkPSS(user) {
+            if (user.beneficiary_type !== 'Farmer') {
+                return null;
+            }
+            
+            return {
+                scheme_id: 'PSS',
+                scheme_name: 'Price Support Scheme',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'Standard',
+                benefit_summary: 'Procurement at MSP when market prices fall below MSP for pulses (Tur, Moong, Urad) and millets (Bajra, Jowar). Guarantees minimum income for your harvest.',
+                application_portal: 'Contact NAFED or designated government office',
+                application_mode: 'Offline',
+                required_documents: ['Land Revenue Documents', 'Identification Proof', 'Bank Account Details'],
+                value_chain_stage: ['Marketing', 'Price Support']
+            };
+        }
+
+        function checkPMFME(user) {
+            if (!['Farmer', 'MSME', 'SHG', 'FPO'].includes(user.beneficiary_type)) {
+                return null;
+            }
+            
+            // Age check
+            if (user.age && user.age < 18) {
+                return {
+                    scheme_id: 'PMFME',
+                    scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Applicant must be above 18 years of age'
+                };
+            }
+            
+            // Education check for individuals
+            if (user.beneficiary_type === 'Farmer' && user.education_level === 'Below 8th') {
+                return {
+                    scheme_id: 'PMFME',
+                    scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Minimum VIII standard pass qualification required for individual applicants'
+                };
+            }
+            
+            // Employee count check
+            if (user.employee_count >= 10) {
+                return {
+                    scheme_id: 'PMFME',
+                    scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Enterprise must employ less than 10 workers'
+                };
+            }
+            
+            // Promoter contribution check
+            if (user.project_cost > 0) {
+                const contributionPercent = (user.promoter_contribution / user.project_cost) * 100;
+                if (contributionPercent < 10) {
+                    return {
+                        scheme_id: 'PMFME',
+                        scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                        jurisdiction: 'Central',
+                        eligible: false,
+                        reason: 'Minimum 10% promoter contribution is required'
+                    };
+                }
+            }
+            
+            // ODOP check for new units
+            if (user.is_new_unit && !user.is_odop_product) {
+                return {
+                    scheme_id: 'PMFME',
+                    scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'New units are only eligible for ODOP (One District One Product) products'
+                };
+            }
+            
+            let benefits = '35% credit-linked capital subsidy on project cost (maximum ₹10 lakh per unit)';
+            
+            if (user.beneficiary_type === 'SHG') {
+                benefits += '; Seed capital: ₹40,000 per SHG member (max ₹4 lakh per SHG)';
+            }
+            
+            if (['FPO', 'SHG'].includes(user.beneficiary_type)) {
+                benefits += '; Common Infrastructure: 35% subsidy up to ₹3 crore; Marketing & Branding: 50% grant';
+            }
+            
+            return {
+                scheme_id: 'PMFME',
+                scheme_name: 'PM Formalisation of Micro Food Processing Enterprises',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'Standard',
+                benefit_summary: benefits,
+                application_portal: 'https://pmfme.mofpi.gov.in/pmfme',
+                application_mode: 'Online',
+                required_documents: ['Aadhaar Card', 'Bank Account', 'Educational Certificate', 'Detailed Project Report'],
+                related_schemes: ['AIF - for interest subvention on loans'],
+                value_chain_stage: ['Processing', 'Value Addition']
+            };
+        }
+
+        function checkPMKSY(user) {
+            if (!['FPO', 'SHG', 'MSME', 'Cooperative', 'Startup'].includes(user.beneficiary_type)) {
+                return null;
+            }
+            
+            // Promoter contribution check
+            if (user.project_cost > 0) {
+                const contributionPercent = (user.promoter_contribution / user.project_cost) * 100;
+                if (contributionPercent < 10) {
+                    return {
+                        scheme_id: 'PMKSY',
+                        scheme_name: 'Pradhan Mantri Kisan Sampada Yojana',
+                        jurisdiction: 'Central',
+                        eligible: false,
+                        reason: 'Minimum 10-20% promoter contribution required'
+                    };
+                }
+            }
+            
+            let subsidyRate = 35;
+            let priority = 'Standard';
+            
+            if (user.caste_category === 'SC' || user.caste_category === 'ST') {
+                subsidyRate = 50;
+                priority = 'High';
+            }
+            
+            if (user.beneficiary_type === 'FPO' || user.beneficiary_type === 'SHG') {
+                priority = 'High';
+            }
+            
+            return {
+                scheme_id: 'PMKSY',
+                scheme_name: 'Pradhan Mantri Kisan Sampada Yojana',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: priority,
+                benefit_summary: `Processing Unit: ${subsidyRate}% grant (max ₹5 crore); Cold Chain Infrastructure: ${subsidyRate}% grant (max ₹10 crore); Agro-Processing Clusters: ${subsidyRate}% grant (max ₹10 crore); Backward & Forward Linkages: ${subsidyRate}% grant (max ₹5 crore)`,
+                application_portal: 'Apply through Expression of Interest (EoI) - Ministry of Food Processing Industries website',
+                application_mode: 'Online',
+                required_documents: ['Registration Certificate', 'Detailed Project Report', 'Bank Loan Sanction', 'Land Documents'],
+                value_chain_stage: ['Processing', 'Cold Chain', 'Infrastructure']
+            };
+        }
+
+        function checkPLISMBP(user) {
+            if (user.beneficiary_type !== 'MSME' && user.beneficiary_type !== 'Startup') {
+                return null;
+            }
+            
+            // Requires established units
+            if (user.annual_turnover < 5000000) {
+                return {
+                    scheme_id: 'PLISMBP',
+                    scheme_name: 'Production Linked Incentive - Millet Products',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Requires established units with significant production capacity and annual turnover of at least ₹50 lakhs'
+                };
+            }
+            
+            return {
+                scheme_id: 'PLISMBP',
+                scheme_name: 'Production Linked Incentive - Millet Products',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'Standard',
+                benefit_summary: 'Sales-based incentive for achieving minimum 10% CAGR on millet-based products. Incentive amount linked to incremental sales over base year.',
+                application_portal: 'Ministry of Food Processing Industries - PLI Portal',
+                application_mode: 'Online',
+                required_documents: ['Company Registration', 'Sales Records', 'Product Details', 'Manufacturing License', 'FSSAI License'],
+                value_chain_stage: ['Manufacturing', 'Value Addition']
+            };
+        }
+
+        function checkFPOScheme(user) {
+            if (user.beneficiary_type !== 'FPO') {
+                return null;
+            }
+            
+            // Minimum membership check
+            const minMembers = (user.fpo_location_type === 'Hilly') ? 100 : 300;
+            
+            if (user.fpo_member_count < minMembers) {
+                return {
+                    scheme_id: 'FPO_10K',
+                    scheme_name: 'Formation and Promotion of 10,000 FPOs',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: `Minimum ${minMembers} farmer members required (100 for hilly/NE regions, 300 for plains)`
+                };
+            }
+            
+            if (!user.fpo_registration_status) {
+                return {
+                    scheme_id: 'FPO_10K',
+                    scheme_name: 'Formation and Promotion of 10,000 FPOs',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'FPO must be registered under Companies Act or Co-operative Societies Act'
+                };
+            }
+            
+            return {
+                scheme_id: 'FPO_10K',
+                scheme_name: 'Formation and Promotion of 10,000 FPOs',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'High',
+                benefit_summary: 'Formation & Management Support: ₹18 lakh over 3 years; Equity Grant: Up to ₹15 lakh (matching grant @ ₹2,000 per member); Credit Guarantee: 85% coverage for loans up to ₹1 crore, 75% for ₹1-2 crore',
+                application_portal: 'Contact SFAC (Small Farmers Agri-Business Consortium) or NABARD',
+                application_mode: 'Offline/Online',
+                required_documents: ['Registration Certificate', 'Member List', 'Bank Account', 'MOA/AOA', 'Board Resolution'],
+                related_schemes: ['NABARD PODF', 'AIF'],
+                value_chain_stage: ['Institutional Support', 'Capacity Building']
+            };
+        }
+
+        function checkNABARDPODF(user) {
+            if (user.beneficiary_type !== 'FPO') {
+                return null;
+            }
+            
+            if (!user.fpo_registration_status) {
+                return null;
+            }
+            
+            return {
+                scheme_id: 'NABARD_PODF',
+                scheme_name: 'NABARD - Producers Organisation Development Fund',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'High',
+                benefit_summary: 'Loan-Linked Grant: Up to 20% of loan amount for training, capacity building, and marketing infrastructure; Business Development Assistance: One-time grant up to ₹5 lakh (matching basis against share capital)',
+                application_portal: 'Apply through NABARD Regional Office',
+                application_mode: 'Offline',
+                required_documents: ['FPO Registration', 'Bank Loan Documents', 'Business Plan', 'Member Details'],
+                value_chain_stage: ['Capacity Building', 'Market Linkage']
+            };
+        }
+
+        function checkAIF(user) {
+            if (!['FPO', 'SHG', 'MSME', 'Cooperative', 'Startup'].includes(user.beneficiary_type)) {
+                return null;
+            }
+            
+            if (!user.is_credit_linked && user.project_cost > 0) {
+                return {
+                    scheme_id: 'AIF',
+                    scheme_name: 'Agriculture Infrastructure Fund',
+                    jurisdiction: 'Central',
+                    eligible: false,
+                    reason: 'Scheme requires taking a bank loan for the project'
+                };
+            }
+            
+            return {
+                scheme_id: 'AIF',
+                scheme_name: 'Agriculture Infrastructure Fund',
+                jurisdiction: 'Central',
+                eligible: true,
+                priority_status: 'High',
+                benefit_summary: '3% interest subvention on loans up to ₹2 crore for 7 years; Credit guarantee coverage for loans up to ₹2 crore (government bears guarantee fee)',
+                application_portal: 'https://agriinfra.dac.gov.in/',
+                application_mode: 'Online',
+                required_documents: ['Project Proposal', 'Registration Certificate', 'Bank Account', 'Land Documents', 'Cost Estimates'],
+                value_chain_stage: ['Infrastructure', 'Post-Harvest Management']
+            };
+        }
+
+        // Gujarat State Schemes
+        function checkMilletDevScheme(user) {
+            if (user.beneficiary_type !== 'Farmer') {
+                return null;
+            }
+            
+            if (!user.has_bank_account || !user.has_land_records) {
+                return {
+                    scheme_id: 'MDS_GUJ',
+                    scheme_name: 'Gujarat Millet Development Scheme',
+                    jurisdiction: 'State',
+                    eligible: false,
+                    reason: 'Must have own bank account and land records'
+                };
+            }
+            
+            let priority = 'Standard';
+            if (['SC', 'ST', 'OBC'].includes(user.caste_category) || user.gender === 'Female') {
+                priority = 'Priority';
+            }
+            
+            return {
+                scheme_id: 'MDS_GUJ',
+                scheme_name: 'Gujarat Millet Development Scheme',
+                jurisdiction: 'State',
+                eligible: true,
+                priority_status: priority,
+                benefit_summary: '₹6,000 per hectare for millet demonstration plot (maximum 1 hectare per farmer, once per year)',
+                application_portal: 'https://ikhedut.gujarat.gov.in/',
+                application_mode: 'Online',
+                required_documents: ['Aadhaar Card', 'Bank Account Details', 'Land Records (7/12 extract)'],
+                value_chain_stage: ['Production', 'Cultivation']
+            };
+        }
+
+        function checkAGR2(user) {
+            if (user.beneficiary_type !== 'Farmer') {
+                return null;
+            }
+            
+            // Exclude SC/ST
+            if (user.caste_category === 'SC' || user.caste_category === 'ST') {
+                return {
+                    scheme_id: 'AGR2_GUJ',
+                    scheme_name: 'AGR-2 Farm Mechanization Scheme',
+                    jurisdiction: 'State',
+                    eligible: false,
+                    reason: 'This scheme is for farmers other than SC/ST categories (SC/ST farmers should apply under central SMAM scheme)'
+                };
+            }
+            
+            let subsidyRate = 40;
+            let priority = 'Standard';
+            
+            if ((user.farmer_category === 'Small' || user.farmer_category === 'Marginal') || 
+                user.gender === 'Female') {
+                subsidyRate = 50;
+                priority = 'High';
+            }
+            
+            return {
+                scheme_id: 'AGR2_GUJ',
+                scheme_name: 'AGR-2 Farm Mechanization Scheme',
+                jurisdiction: 'State',
+                eligible: true,
+                priority_status: priority,
+                benefit_summary: `${subsidyRate}% subsidy on agricultural equipment including Power Tillers, Rice Transplanters, and other tractor-operated machinery. Higher rate for Small/Marginal/Women farmers.`,
+                application_portal: 'https://ikhedut.gujarat.gov.in/',
+                application_mode: 'Online',
+                required_documents: ['Aadhaar Card', 'Residence Proof', 'Bank Account', 'Land Records'],
+                value_chain_stage: ['Mechanization']
+            };
+        }
+
+        function checkAGR50(user) {
+            if (user.beneficiary_type !== 'Farmer') {
+                return null;
+            }
+            
+            return {
+                scheme_id: 'AGR50_GUJ',
+                scheme_name: 'AGR-50 Tractor Purchase Assistance',
+                jurisdiction: 'State',
+                eligible: true,
+                priority_status: 'Standard',
+                benefit_summary: 'Tractors up to 40 HP: 25% of cost or ₹45,000 (whichever is less); Tractors 40-60 HP: 25% of cost or ₹60,000 (whichever is less). Tractor must be from empaneled manufacturer.',
+                application_portal: 'https://ikhedut.gujarat.gov.in/',
+                application_mode: 'Online',
+                required_documents: ['Aadhaar Card', 'Residence Proof (Gujarat)', 'Bank Account'],
+                value_chain_stage: ['Mechanization']
+            };
+        }
+
+        function checkCMAgroScheme(user) {
+            if (!['MSME', 'Startup', 'FPO'].includes(user.beneficiary_type)) {
+                return null;
+            }
+            
+            const ownerAge = user.age || (user.beneficiary_type === 'MSME' ? parseInt(document.getElementById('msme_age').value) : null);
+            
+            if (ownerAge && ownerAge < 18) {
+                return {
+                    scheme_id: 'CM_AGRO_GUJ',
+                    scheme_name: 'CM Agriculture and Food Processing Scheme',
+                    jurisdiction: 'State',
+                    eligible: false,
+                    reason: 'Beneficiary/Business owner must be above 18 years'
+                };
+            }
+            
+            return {
+                scheme_id: 'CM_AGRO_GUJ',
+                scheme_name: 'CM Agriculture and Food Processing Scheme',
+                jurisdiction: 'State',
+                eligible: true,
+                priority_status: 'Standard',
+                benefit_summary: '30% credit-linked back-ended subsidy on factory construction and machinery costs (maximum ₹50 lakh). Term loan must be at least 1.5x subsidy amount. Disbursed in two installments.',
+                application_portal: 'Gujarat Agro Industries Corporation (GAIC) portal',
+                application_mode: 'Online',
+                required_documents: ['Aadhaar Card', 'PAN Card', 'Land Ownership Documents/Lease Agreement', 'Bank Loan Sanction', 'CIBIL Score', 'Project Report'],
+                value_chain_stage: ['Processing', 'Agro-Industry']
+            };
+        }
+
+        // Display results
+        function displayResults(results) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = '';
+            
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>No schemes found</h3>
+                        <p>Please check your information and try again.</p>
+                    </div>
+                `;
+                document.getElementById('results').classList.add('show');
+                return;
+            }
+            
+            // Count eligible and not eligible
+            const eligible = results.filter(r => r.eligible);
+            const notEligible = results.filter(r => !r.eligible);
+            
+            document.getElementById('eligible-count').textContent = `${eligible.length} Eligible`;
+            document.getElementById('not-eligible-count').textContent = `${notEligible.length} Not Eligible`;
+            
+            // Display eligible schemes first
+            if (eligible.length > 0) {
+                const eligibleHeader = document.createElement('h3');
+                eligibleHeader.textContent = '✅ Schemes You Are Eligible For';
+                eligibleHeader.style.color = '#4caf50';
+                eligibleHeader.style.marginBottom = '20px';
+                eligibleHeader.style.fontSize = '22px';
+                container.appendChild(eligibleHeader);
+                
+                eligible.forEach(scheme => {
+                    const card = createResultCard(scheme);
+                    container.appendChild(card);
+                });
+            }
+            
+            // Display not eligible schemes
+            if (notEligible.length > 0) {
+                const notEligibleHeader = document.createElement('h3');
+                notEligibleHeader.textContent = '❌ Schemes You Are Not Eligible For';
+                notEligibleHeader.style.color = '#f44336';
+                notEligibleHeader.style.marginTop = '40px';
+                notEligibleHeader.style.marginBottom = '20px';
+                notEligibleHeader.style.fontSize = '22px';
+                container.appendChild(notEligibleHeader);
+                
+                notEligible.forEach(scheme => {
+                    const card = createResultCard(scheme);
+                    container.appendChild(card);
+                });
+            }
+            
+            document.getElementById('results').classList.add('show');
+        }
+
+        function createResultCard(scheme) {
+            const card = document.createElement('div');
+            card.className = 'result-card';
+            card.setAttribute('data-jurisdiction', scheme.jurisdiction);
+            card.setAttribute('data-eligibility', scheme.eligible ? 'eligible' : 'not-eligible');
+            
+            if (!scheme.eligible) {
+                card.classList.add('not-eligible');
+            } else if (scheme.priority_status === 'High' || scheme.priority_status === 'Priority') {
+                card.classList.add('high-priority');
+            }
+            
+            let html = `
+                <div class="result-header">
+                    <div>
+                        <h3>${scheme.scheme_name}</h3>
+                        <div class="scheme-id">${scheme.scheme_id}</div>
+                    </div>
+            `;
+            
+            if (scheme.eligible) {
+                html += `
+                    <span class="priority-badge priority-${scheme.priority_status.toLowerCase()}">
+                        ${scheme.priority_status === 'High' ? '⭐ High Priority' : 
+                          scheme.priority_status === 'Priority' ? '🎯 Priority' : '✓ Eligible'}
+                    </span>
+                `;
+            }
+            
+            html += `</div>`;
+            
+            // Tags
+            html += `<div class="scheme-tags">`;
+            html += `<span class="tag ${scheme.jurisdiction.toLowerCase()}">${scheme.jurisdiction}</span>`;
+            if (scheme.value_chain_stage) {
+                scheme.value_chain_stage.forEach(stage => {
+                    html += `<span class="tag">${stage}</span>`;
+                });
+            }
+            html += `</div>`;
+            
+            if (scheme.eligible) {
+                html += `
+                    <div class="benefit-text">
+                        <strong>💰 Benefits:</strong> ${scheme.benefit_summary}
+                    </div>
+                `;
+                
+                if (scheme.application_portal) {
+                    html += `
+                        <div class="action-buttons">
+                            <a href="${scheme.application_portal}" target="_blank" class="apply-link">
+                                📝 Apply Now
+                            </a>
+                            <a href="#" onclick="alert('Detailed guidelines will open here'); return false;" class="info-link">
+                                ℹ️ View Guidelines
+                            </a>
+                        </div>
+                    `;
+                }
+                
+                if (scheme.required_documents && scheme.required_documents.length > 0) {
+                    html += `
+                        <div class="documents-list">
+                            <h4>📋 Required Documents:</h4>
+                            <ul>
+                                ${scheme.required_documents.map(doc => `<li>${doc}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                
+                if (scheme.related_schemes && scheme.related_schemes.length > 0) {
+                    html += `
+                        <div class="related-schemes">
+                            <strong>💡 Can be combined with:</strong>
+                            ${scheme.related_schemes.map(s => `<span>${s}</span>`).join('')}
+                        </div>
+                    `;
+                }
+            } else {
+                html += `
+                    <div class="reason-text">
+                        <strong>Reason for ineligibility:</strong> ${scheme.reason}
+                    </div>
+                `;
+            }
+            
+            card.innerHTML = html;
+            return card;
+        }
+
+        function filterResults() {
+            const jurisdictionFilter = document.getElementById('filter-jurisdiction').value;
+            const eligibilityFilter = document.getElementById('filter-eligibility').value;
+            
+            const cards = document.querySelectorAll('.result-card');
+            
+            cards.forEach(card => {
+                let show = true;
+                
+                if (jurisdictionFilter !== 'all' && card.getAttribute('data-jurisdiction') !== jurisdictionFilter) {
+                    show = false;
+                }
+                
+                if (eligibilityFilter !== 'all' && card.getAttribute('data-eligibility') !== eligibilityFilter) {
+                    show = false;
+                }
+                
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        // Initialize
+        window.addEventListener('load', function() {
+            // Set default values
+            updateDynamicFields();
+        });
+    </script>
+</body>
+</html>

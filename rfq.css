@@ -1,0 +1,135 @@
+.rfq-page {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+    font-size: 2rem;
+}
+
+.rfq-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.rfq-filters select,
+.rfq-filters input {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.rfq-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.rfq-card {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem 2rem;
+    transition: var(--transition);
+}
+
+.rfq-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.rfq-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    grid-column: 1 / -1;
+}
+
+.rfq-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-weight: 500;
+}
+
+.rfq-actions {
+    align-self: center;
+    justify-self: end;
+}
+
+.rfq-status {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.open {
+    background-color: #e0f2f1;
+    color: #00796b;
+}
+
+.status-badge.closed {
+    background-color: #fce4ec;
+    color: #c2185b;
+}
+
+.status-badge.awarded {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+}
+
+#quoteRfqDetails p {
+    margin-bottom: 0.5rem;
+}
+
+#quoteRfqDetails p strong {
+    min-width: 120px;
+    display: inline-block;
+}
+

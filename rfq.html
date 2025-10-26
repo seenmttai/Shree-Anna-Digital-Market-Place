@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Quotations - Shree Anna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rfq.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo" onclick="location.href='index.html'">
+                <span class="logo-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v20" />
+                        <path d="M12 6c2 0 3.5-1.5 3.5-3.5M12 6c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 10c2 0 3.5-1.5 3.5-3.5M12 10c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 14c2 0 3.5-1.5 3.5-3.5M12 14c-2 0-3.5-1.5-3.5-3.5" />
+                        <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
+                    </svg>
+                </span>
+                <span class="logo-text">Shree Anna</span>
+            </div>
+            <nav class="main-nav">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="rfq.html" class="active">RFQ</a>
+                <a href="auction.html">Auctions</a>
+                <a href="forecasting.html">Forecasting</a>
+                <a href="quality-checker.html">Quality Checker</a>
+                <a href="schemes.html">Schemes</a>
+            </nav>
+            <div class="header-actions">
+                <button class="voice-btn" id="voiceBtn">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8" y1="23" x2="16" y2="23"/>
+                    </svg>
+                </button>
+                <select id="langSelect" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+                <button class="btn-primary" id="loginBtn">Login</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container rfq-page">
+        <div class="page-header">
+            <h1>Buyer's Requests (RFQ)</h1>
+            <button class="btn-primary" id="createRfqBtn">Post a Buy Request</button>
+        </div>
+        
+        <div class="rfq-filters">
+            <select id="statusFilter">
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+                <option value="awarded">Awarded</option>
+            </select>
+            <input type="text" id="categorySearch" placeholder="Search by category...">
+        </div>
+
+        <div id="rfqList" class="rfq-list">
+            <!-- RFQ items will be injected here by JS -->
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+    </main>
+    
+    <!-- Create RFQ Modal -->
+    <div id="rfqModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Create New RFQ</h2>
+            <form id="rfqForm">
+                <div class="form-group">
+                    <label for="productCategory">Product Category</label>
+                    <input type="text" id="productCategory" placeholder="e.g., Organic Finger Millet" required>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="unit">Unit</label>
+                        <select id="unit" required>
+                            <option value="kg">kg</option>
+                            <option value="quintal">quintal</option>
+                            <option value="tonne">tonne</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="targetPrice">Target Price (₹ per unit, optional)</label>
+                    <input type="number" id="targetPrice" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="deliveryLocation">Delivery Location</label>
+                    <input type="text" id="deliveryLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryDate">Required by Date</label>
+                    <input type="date" id="deliveryDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description / Specifications</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="expiresAt">Bidding Ends On</label>
+                    <input type="datetime-local" id="expiresAt" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Submit RFQ</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Submit Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Submit Quote</h2>
+            <div id="quoteRfqDetails"></div>
+            <form id="quoteForm">
+                <input type="hidden" id="quoteRfqId">
+                <div class="form-group">
+                    <label for="quotePrice">Your Price (₹ per unit)</label>
+                    <input type="number" id="quotePrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryTerms">Delivery Terms</label>
+                    <input type="text" id="deliveryTerms" placeholder="e.g., Free delivery, 7 days">
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Send My Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+        }
+    }
+    </script>
+    <script src="translations.js"></script>
+    <script src="supabase-client.js" type="module"></script>
+    <script src="rfq.js" type="module"></script>
+</body>
+</html>

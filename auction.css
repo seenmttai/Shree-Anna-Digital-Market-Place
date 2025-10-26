@@ -1,0 +1,141 @@
+.auction-page {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+    font-size: 2rem;
+}
+
+.auction-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auction-filters select,
+.auction-filters input {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auction-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.auction-card {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem 2rem;
+    transition: var(--transition);
+}
+
+.auction-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.auction-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    grid-column: 1 / -1;
+}
+
+.auction-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-weight: 500;
+}
+
+.current-price {
+    color: var(--success);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.auction-actions {
+    align-self: center;
+    justify-self: end;
+}
+
+.auction-status {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.active {
+    background-color: #e0f2f1;
+    color: #00796b;
+}
+
+.status-badge.completed {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-badge.cancelled {
+    background-color: #fce4ec;
+    color: #c2185b;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+}
+
+#bidAuctionDetails p {
+    margin-bottom: 0.5rem;
+}
+
+#bidAuctionDetails p strong {
+    min-width: 120px;
+    display: inline-block;
+}
+
