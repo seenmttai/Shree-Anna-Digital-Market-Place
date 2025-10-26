@@ -1,4 +1,4 @@
-import { supabase, getCurrentUser, createProduct } from 'https://bharat-millet-hub.pages.dev/supabase-client.js';
+import { supabase, getCurrentUser, createProduct, uploadProductImages } from './supabase-client.js';
 
 let currentUser = null;
 
@@ -30,9 +30,22 @@ async function handleFormSubmit(e) {
     submitButton.disabled = true;
     submitButton.textContent = 'Posting...';
 
-    // In a real app, you would handle image uploads to Supabase Storage first
-    // For simplicity, we'll use placeholder images.
-    const placeholderImages = ["https://via.placeholder.com/400x300.png?text=Product+Image+1"];
+    // Handle image uploads
+    const imageFiles = document.getElementById('productImages').files;
+    let imageUrls = [];
+
+    if (imageFiles.length > 0) {
+        submitButton.textContent = 'Uploading images...';
+        const { urls, error: uploadError } = await uploadProductImages(imageFiles, currentUser.id);
+
+        if (uploadError) {
+            alert('Error uploading images: ' + uploadError.message);
+            submitButton.disabled = false;
+            submitButton.textContent = 'Post Product';
+            return;
+        }
+        imageUrls = urls;
+    }
 
     const productData = {
         seller_id: currentUser.id,
@@ -44,7 +57,7 @@ async function handleFormSubmit(e) {
         retail_price: parseFloat(document.getElementById('retailPrice').value) || null,
         wholesale_price: parseFloat(document.getElementById('wholesalePrice').value) || null,
         wholesale_min_qty: parseInt(document.getElementById('wholesaleMinQty').value, 10) || null,
-        images: placeholderImages, // Using placeholder
+        images: imageUrls,
         // base_price is required in DB schema, let's use retail or wholesale
         base_price: parseFloat(document.getElementById('retailPrice').value) || parseFloat(document.getElementById('wholesalePrice').value) || 0,
     };

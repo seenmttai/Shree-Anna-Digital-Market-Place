@@ -199,6 +199,36 @@ export async function getReviews(productId) {
     return { data, error };
 }
 
+export async function uploadProductImages(files, userId) {
+    const bucket = 'product-images';
+    const uploadPromises = Array.from(files).map(file => {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${userId}/${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
+        return supabase.storage.from(bucket).upload(fileName, file);
+    });
+
+    const results = await Promise.all(uploadPromises);
+
+    const urls = [];
+    const errors = [];
+    for (const result of results) {
+        if (result.error) {
+            errors.push(result.error);
+            console.error('Upload error:', result.error.message);
+        } else if (result.data) {
+            const { data: { publicUrl } } = supabase.storage.from(bucket).getPublicUrl(result.data.path);
+            urls.push(publicUrl);
+        }
+    }
+
+    if (errors.length > 0) {
+        // Return first error for simplicity
+        return { urls: null, error: errors[0] };
+    }
+
+    return { urls, error: null };
+}
+
 export async function uploadDocument(file, userId, documentType) {
     const fileExt = file.name.split('.').pop();
     const fileName = `${userId}/${documentType}_${Date.now()}.${fileExt}`;

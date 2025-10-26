@@ -61,7 +61,7 @@ function createProductCard(product) {
     return `
         <div class="product-card ${isFeatured ? 'featured' : ''}" data-id="${product.id}">
             ${isFeatured ? '<div class="product-badge">Featured</div>' : ''}
-            <img src="${product.images[0] || 'https://via.placeholder.com/300x200?text=No+Image'}" 
+            <img src="${(product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/300x200?text=No+Image'}" 
                  alt="${product.name}" class="product-image">
             <div class="product-info">
                 <div class="product-header">
