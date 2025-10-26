@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace - Bharat Millet Hub</title>
+    <title>Marketplace - Shree Anna</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="marketplace.css">
@@ -21,13 +21,13 @@
                         <path d="M12 18c1.6 0 2.8-1.2 2.8-2.8M12 18c-1.6 0-2.8-1.2-2.8-2.8" />
                     </svg>
                 </span>
-                <span class="logo-text">Bharat Millet Hub</span>
+                <span class="logo-text">Shree Anna</span>
             </div>
             <nav class="main-nav">
                 <a href="marketplace.html" class="active">Marketplace</a>
                 <a href="rfq.html">RFQ</a>
                 <a href="auction.html">Auctions</a>
-                <a href="https://bharat-millet-hub.pages.dev/forecasting">Forecasting</a>
+                <a href="forecasting.html">Forecasting</a>
                 <a href="quality-checker.html">Quality Checker</a>
                 <a href="schemes.html">Schemes</a>
             </nav>
@@ -172,6 +172,30 @@
         </div>
     </div>
 
+    <!-- Quality Check Modal -->
+    <div id="qcModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="modal-close">&times;</span>
+            <h2>Quality Verification</h2>
+            <div class="form-group">
+                <label for="qcFile">Upload grain image</label>
+                <input type="file" id="qcFile" accept="image/*">
+                <small class="muted">Top-down photo, plain white/black background works best.</small>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div>
+                    <label>Input</label>
+                    <canvas id="qcInCanvas" width="640" height="480" style="border:1px solid var(--border);"></canvas>
+                </div>
+                <div>
+                    <label>Overlay</label>
+                    <canvas id="qcOutCanvas" width="640" height="480" style="border:1px solid var(--border);"></canvas>
+                </div>
+            </div>
+            <div id="qcResult" style="margin-top:1rem;font-weight:600;"></div>
+        </div>
+    </div>
+
     <script type="importmap">
     {
         "imports": {
@@ -181,6 +205,8 @@
     </script>
     <script src="translations.js"></script>
     <script src="supabase-client.js" type="module"></script>
+    <script src="https://docs.opencv.org/4.x/opencv.js"></script>
+    <script src="quality-checker.js"></script>
     <script src="marketplace.js" type="module"></script>
 </body>
 </html>

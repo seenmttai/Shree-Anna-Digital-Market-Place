@@ -118,6 +118,9 @@ function createProductCard(product) {
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         </svg>
                     </button>
+                    <button class="btn-secondary" onclick="event.stopPropagation(); openQualityModal()">
+                        Quality Check
+                    </button>
                 </div>
             </div>
         </div>
@@ -159,6 +162,12 @@ function setupEventListeners() {
     const compareModal = document.getElementById('compareModal');
     const compareClose = compareModal.querySelector('.modal-close');
     compareClose.addEventListener('click', () => compareModal.classList.remove('active'));
+    
+    // QC modal
+    const qcModal = document.getElementById('qcModal');
+    const qcClose = qcModal.querySelector('.modal-close');
+    qcClose.addEventListener('click', () => qcModal.classList.remove('active'));
+    document.getElementById('qcFile').addEventListener('change', handleQcFile);
     
     // Scan barcode
     document.getElementById('scanBtn').addEventListener('click', scanBarcode);
@@ -350,5 +359,43 @@ function setupVoiceCommands() {
     // Reuse voice command setup from app.js
 }
 
-document.addEventListener('DOMContentLoaded', init);
+window.openQualityModal = function() {
+    document.getElementById('qcResult').textContent = '';
+    const ctx1 = document.getElementById('qcInCanvas').getContext('2d');
+    const ctx2 = document.getElementById('qcOutCanvas').getContext('2d');
+    ctx1.clearRect(0,0,640,480); ctx2.clearRect(0,0,640,480);
+    document.getElementById('qcModal').classList.add('active');
+};
 
+async function handleQcFile(e) {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const img = new Image();
+    img.onload = async () => {
+        const inCv = document.getElementById('qcInCanvas');
+        const ctx = inCv.getContext('2d');
+        // Fit image into canvas
+        const scale = Math.min(inCv.width / img.width, inCv.height / img.height);
+        const w = Math.floor(img.width * scale), h = Math.floor(img.height * scale);
+        ctx.clearRect(0,0,inCv.width,inCv.height);
+        ctx.drawImage(img, 0, 0, w, h);
+        await waitForCV();
+        const res = (window.GrainQC && GrainQC.analyzeOnCanvases) ? GrainQC.analyzeOnCanvases('qcInCanvas','qcOutCanvas') : null;
+        document.getElementById('qcResult').textContent = res ? `Grade: ${res.grade}` : 'Unable to analyze. Try again.';
+    };
+    img.src = URL.createObjectURL(file);
+}
+
+function waitForCV() {
+    return new Promise(resolve => {
+        if (window.cv && cv.Mat) return resolve();
+        const check = setInterval(() => {
+            if (window.cv && cv.Mat) {
+                clearInterval(check);
+                resolve();
+            }
+        }, 100);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', init);

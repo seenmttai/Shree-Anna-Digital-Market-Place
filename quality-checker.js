@@ -451,9 +451,9 @@
     const loadSampleBtn = document.getElementById('loadSample');
     const exportBtn = document.getElementById('exportCsv');
 
-    file.addEventListener('change', handleImage);
-    loadSampleBtn.addEventListener('click', loadSampleImage);
-    exportBtn.addEventListener('click', () => { if (lastItems && lastItems.length) exportCSV(lastItems); });
+    if (file) file.addEventListener('change', handleImage);
+    if (loadSampleBtn) loadSampleBtn.addEventListener('click', loadSampleImage);
+    if (exportBtn) exportBtn.addEventListener('click', () => { if (lastItems && lastItems.length) exportCSV(lastItems); });
 
     // Persist settings
     const ids = ['cfgWidth','cfgMinArea','cfgFg','cfgSol'];
@@ -464,6 +464,19 @@
       el.addEventListener('change', () => localStorage.setItem('qc_'+id, el.value));
     });
   }
+
+  // Expose lightweight API for other pages (e.g., marketplace)
+  window.GrainQC = {
+    analyzeOnCanvases(inCanvasId, outCanvasId, overrides = {}) {
+      const inCv = document.getElementById(inCanvasId);
+      if (!inCv || !window.cv) return null;
+      const cfg = { ...DefaultCfg, ...overrides };
+      const srcRGBA = cv.imread(inCv);
+      const res = analyzeMat(srcRGBA, cfg, outCanvasId);
+      srcRGBA.delete();
+      return res;
+    }
+  };
 
   if (window.cv && cv['onRuntimeInitialized']) {
     cv['onRuntimeInitialized'] = () => initUI();
