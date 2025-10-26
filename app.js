@@ -156,7 +156,7 @@ async function handleRegister(e) {
     });
     
     if (error) {
-        alert('Registration failed: ' + error.message);
+        console.log("i am doing nothing");
     } else {
         document.getElementById('registerForm').style.display = 'none';
         document.getElementById('magicLinkMessage').style.display = 'block';
