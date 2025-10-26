@@ -1,4 +1,4 @@
-import { supabase, getCurrentUser, createProduct } from './supabase-client.js';
+import { supabase, getCurrentUser, createProduct } from 'https://bharat-millet-hub.pages.dev/supabase-client.js';
 
 let currentUser = null;
 
